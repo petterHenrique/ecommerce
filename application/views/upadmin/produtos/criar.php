@@ -34,13 +34,17 @@
 	                        <label>Nome:</label>
 	                        <input id="nome-produto" placeholder="Ex: PRODUTO NIKE UNISEX" class="form-control">
 	                    </div>
-	                    <div class="form-group col-md-6">
+	                    <div class="form-group col-md-4">
 	                        <label>EAN:</label>
 	                        <input id="ean-produto" placeholder="Ex: 822400" class="form-control">
 	                    </div>
-	                    <div class="form-group col-md-6">
+	                    <div class="form-group col-md-4">
 	                        <label>NCM:</label>
 	                        <input id="ncm-produto" placeholder="NOMENCLATURA COMUM DO MERCOSUL" class="form-control">
+	                    </div>
+	                    <div class="form-group col-md-4">
+	                        <label>Estoque:</label>
+	                        <input id="estoque-produto" placeholder="Ex: 40" class="form-control">
 	                    </div>
 	                    <div class="form-group col-md-12">
 	                        <label>Descrição:</label>
@@ -52,7 +56,12 @@
 	                    </div>
 	                    <div class="form-group col-md-6">
 	                        <label>Marca:</label>
-	                        <input id="marca-produto" placeholder="Ex: NIKE" class="form-control">
+	                        <select id="marca-produto" style="padding:6px 12px;" class="select2 form-control">
+                        			<option selected value="0">Nenhum</option>
+			                        <?php foreach ($marcas as $marca) { ?>
+			                        <option value="<?=$marca['COD_MARCA'];?>"><?=$marca['NOME_MARCA'];?></option>
+	                        <?php }	?>
+	                        </select>
 	                    </div>
 	                    <hr>
 					</div>
@@ -121,23 +130,31 @@
 
                     <div class="row" style="padding:20px;border:1px solid #dadada;background:#f5f5f5;">
 	                    <h2 class="text-primary">Fotos do Produto:</h2>
+	                    <h5 class="text-primary">(limite de 8 fotos)</h5>
 	                    <hr>
-	                    <form action="/file-upload" class="dropzone">
-  <div class="fallback">
-    <input name="file" id="fotos-produto" type="file" multiple />
-  </div>
-</form>
+						  <form action="" class="dropzone" id="fotosProduto">  
+						    <div class="fallback"> 
+						     <input name="arquivos" type="file" multiple /> 
+						    </div> 
+						 </form>
 	                    <hr>
                     </div>
                     <hr>
 
+                    <div class="row" style="padding:20px;border:1px solid #dadada;background:#f5f5f5;">
+	                    <h2 class="text-primary">Variações do Produto:</h2>
+	                    <hr>
+						  <button class="btn btn-success">Adicionar</button>
+	                    <hr>
+                    </div>
+                    <hr>
 
                     <div class="row" style="padding:20px;border:1px solid #dadada;background:#f5f5f5;">
 	                    <h2 class="text-primary">Otimização de Busca SEO:</h2>
 	                    <hr>
 	                    <div class="form-group col-md-4 col-xs-12">
 	                        <label>Title SEO H1:</label>
-	                        <input id="title-seo" placeholder="Ex: NOME DO PRODUTO" class="form-control">
+	                        <input maxlength="250" id="title-seo" placeholder="Ex: NOME DO PRODUTO" class="form-control">
 	                    </div>
 	                    <div class="form-group col-md-4 col-xs-12">
 	                        <label>Keywords SEO:</label>
@@ -149,7 +166,7 @@
 	                    </div>
 	                    <div class="form-group col-md-12 col-xs-12">
 	                        <label>Description SEO:</label>
-	                         <textarea id="description-seo" style="resize: none;" class="form-control" rows="3"></textarea>
+	                         <textarea maxlength="500" id="description-seo" style="resize: none;" class="form-control" rows="4"></textarea>
 	                    </div>
 	                    <hr>
                     </div>
@@ -174,11 +191,12 @@
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
 	<script> 
 	const produto = new Produto();
+	produto.ConfiguracoesDropZone();
 	$(function(){
-		
 		produto.InicializaMascaras();
 		
-		var myDropzone = new Dropzone("#fotos-produto", { url: "/file/post"});
+		//var myDropzone = new Dropzone("#fotos-produto", { url: "/file/post"});
+		
 
 		$("#descricao-produto").summernote({
 			height: 400
@@ -206,11 +224,20 @@
 		}
 
 		self.ConfiguracoesDropZone = function(){
-
-			var uploadProdutos = new Dropzone("#fotos-produto", { 
-				url: "", 
-				autoProcessQueue:false 
-			});
+			Dropzone.options.fotosProduto = {
+				url: "<?=base_url()?>/produtosAdmin/uploadImagens",
+			  	addRemoveLinks: true,
+			  	maxFiles: 8,
+			  	autoProcessQueue: false,
+			  	acceptedFiles: '.png,.jpg', 
+  				dictDefaultMessage: "Faça upload das imagens do produto!",
+  				dictRemoveFile: "Remover Arquivo!",
+  				init: function() {
+				    this.on("maxfilesexceeded", function(file){
+				        this.removeFile(file);
+				    });
+				}
+			};
 		}
 
 		self.InicializaMascaras = function(){

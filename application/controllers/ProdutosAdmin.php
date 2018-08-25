@@ -13,8 +13,9 @@ class ProdutosAdmin extends MasterLogado {
 
 	public function criar()
 	{
-		//$this->load->model("PaginasAdminModel");
-		$this->load->view('/upadmin/produtos/criar');
+		$this->load->model("MarcasAdminModel");
+		$dados['marcas'] = $this->MarcasAdminModel->buscarTodasMarcas();
+		$this->load->view('/upadmin/produtos/criar', $dados);
 	}
 
 	public function editar(){
@@ -127,7 +128,7 @@ class ProdutosAdmin extends MasterLogado {
 
 		   array_push($arrayArquivos, $fileName);
 
-		   move_uploaded_file($_FILES['arquivos']['tmp_name'][$i], './uploads/media/'.$fileName);
+		   move_uploaded_file($_FILES['arquivos']['tmp_name'][$i], './uploads/catalogo/'.$fileName);
 
 		}	   
 

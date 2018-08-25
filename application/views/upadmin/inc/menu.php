@@ -111,6 +111,9 @@
                             <a href="<?=base_url()?>index.php/produtosAdmin/index">Produtos</a>
                         </li>
                         <li>
+                            <a href="morris.html">Atributos</a>
+                        </li>
+                        <li>
                             <a href="morris.html">Variações</a>
                         </li>
                     </ul>
@@ -121,6 +124,25 @@
                 </li>
                 <li>
                     <a href="tables.html"><i class="fa fa-user fa-fw"></i> Clientes</a>
+                </li>
+                <li>
+                    <a href="tables.html"><i class="fa fa-exchange fa-fw"></i> Marketplace
+                    <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="<?=base_url()?>index.php/bannersadmin/index">B2W</a>
+                        </li>
+                        <li>
+                            <a href="buttons.html">Mercado Livre</a>
+                        </li>
+                        <li>
+                            <a href="buttons.html">Walmart</a>
+                        </li>
+                        <li>
+                            <a href="buttons.html">Daffiti</a>
+                        </li>
+                    </ul>
+                    
                 </li>
                 <li>
                     <a href="forms.html"><i class="fa fa-bar-chart fa-fw"></i> Relatórios</a>
