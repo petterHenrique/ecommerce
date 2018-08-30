@@ -29,6 +29,24 @@ class ProdutosAdmin extends MasterLogado {
 		}
 	}
 
+
+	public function testePagseguro(){
+		$action = 'https://ws.pagseguro.uol.com.br/v2/sessions/';
+        $params = [
+            'email' => 'p_h_campos@hotmail.com',
+            'token' => '218B2800593F49EAAAF3F463EFA3B6E7',
+        ];
+        $ch = curl_init($action);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        echo curl_exec($ch);
+        $result = simplexml_load_string(curl_exec($ch));
+        curl_close($ch);
+        
+        echo $result;
+	}
+
 	public function excluirPagina(){
 		$dados = $this->input->post("id");
 		if(!empty($dados)){

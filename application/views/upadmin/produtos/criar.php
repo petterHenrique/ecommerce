@@ -44,7 +44,7 @@
 	                    </div>
 	                    <div class="form-group col-md-4">
 	                        <label>Estoque:</label>
-	                        <input id="estoque-produto" placeholder="Ex: 40" class="form-control">
+	                        <input id="estoque-produto" onkeyup="somenteNumeros(this);" placeholder="Ex: 40" class="form-control">
 	                    </div>
 	                    <div class="form-group col-md-12">
 	                        <label>Descrição:</label>
@@ -71,12 +71,12 @@
 	                    <hr>
 	                    <div class="form-group col-md-6">
 	                        <label>Preço:</label>
-	                        <input id="preco-produto" maxlength="20" placeholder="Ex: R$ 0,00" class="form-control">
+	                        <input id="preco-produto" onkeyup="somenteNumeros(this);" maxlength="20" placeholder="Ex: R$ 0,00" class="form-control">
 	                    </div>
 
 	                    <div class="form-group col-md-6">
 	                        <label>Preço Promocional:</label>
-	                        <input id="promo-produto" maxlength="20" placeholder="Ex: R$ 0,00" class="form-control">
+	                        <input id="promo-produto" onkeyup="somenteNumeros(this);" maxlength="20" placeholder="Ex: R$ 0,00" class="form-control">
 	                    </div>
 
 	                    <div class="form-group col-md-6">
@@ -216,11 +216,94 @@
 
 		self.Validar = function(){
 
+			//valida dados gerais do produto
+			if($("#nome-produto").val() == ""){
+				alertas.AlertaErro("Atenção", "Preencha o nome do Produto!");
+				$("#nome-produto").focus();
+				return false;
+			}else if($("#ean-produto").val() == ""){
+				alertas.AlertaErro("Atenção", "Preencha o código EAN do Produto!");
+				$("#ean-produto").focus();
+				return false;
+			}else if($("#estoque-produto").val() == ""){
+				alertas.AlertaErro("Atenção", "Preencha o estoque do Produto!");
+				$("#estoque-produto").focus();
+				return false;
+			}
+			//precificação do produto
+			else if($("#preco-produto").val() == ""){
+				alertas.AlertaErro("Atenção", "Preencha o código EAN do Produto!");
+				$("#preco-produto").focus();
+				return false;
+			}
 
+			//dimensoes do produto
+
+			else if($("#peso-produto").val() == ""){
+				alertas.AlertaErro("Atenção", "Preencha o peso do Produto!");
+				$("#peso-produto").focus();
+				return false;
+			}
+			else if($("#comprimento-produto").val() == ""){
+				alertas.AlertaErro("Atenção", "Preencha o comprimento do Produto!");
+				$("#comprimento-produto").focus();
+				return false;
+			}
+			else if($("#largura-produto").val() == ""){
+				alertas.AlertaErro("Atenção", "Preencha a largura do Produto!");
+				$("#largura-produto").focus();
+				return false;
+			}
+			else if($("#altura-produto").val() == ""){
+				alertas.AlertaErro("Atenção", "Preencha a altura do Produto!");
+				$("#altura-produto").focus();
+				return false;
+			}
+			//validação de SEO
+			else if($("#title-seo").val() == ""){
+				alertas.AlertaErro("Atenção", "Preencha título do Produto para SEO!");
+				$("#title-seo").focus();
+				return false;
+			}
+			else if($("#keyword-seo").val() == ""){
+				alertas.AlertaErro("Atenção", "Preencha pelo menos uma palavra chave do seu Produto!");
+				$("#keyword-seo").focus();
+				return false;
+			}
+			else if($("#urlAmigavel-produto").val() == ""){
+				alertas.AlertaErro("Atenção", "Preencha a Url Amigável!");
+				$("#urlAmigavel-produto").focus();
+				return false;
+			}else{
+				return true;
+			}
 		}
 
 		self.Salvar = function(){
 
+			$.ajax({
+				method: "POST",
+				url: "<?=base_url()?>/index.php/produtosAdmin/testePagseguro",
+				data: {},
+				success: function(data){
+					console.log(data);
+				},
+				error: function(data){
+					console.log(data);
+				},
+				complete: function(){
+
+				}
+			});
+		}
+
+
+
+		self.MontarViewModel = function(){
+			let objeto = {
+
+			}
+			return;
 		}
 
 		self.ConfiguracoesDropZone = function(){
@@ -241,12 +324,20 @@
 		}
 
 		self.InicializaMascaras = function(){
-		$("#preco-produto, #promo-produto").mask("#.##0,00", {reverse: true});;
-		$("#peso-produto").mask("#.##0,000", {reverse: true});
-		$("#comprimento-produto, #largura-produto, #comprimento-produto").mask("00000000000");
+			$("#preco-produto, #promo-produto").mask("#.##0,00", {reverse: true});;
+			$("#peso-produto").mask("#.##0,000", {reverse: true});
+			$("#comprimento-produto, #largura-produto, #comprimento-produto").mask("00000000000");
 		}
 	}
 
+	function somenteNumeros(num) {
+        var er = /[^0-9.]/;
+        er.lastIndex = 0;
+        var campo = num;
+        if (er.test(campo.value)) {
+          campo.value = "";
+        }
+    }
 	</script>
 
 	<script> 
