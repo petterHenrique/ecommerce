@@ -1,193 +1,202 @@
-html, body {
-       height: 100%;
-   }
+html,
+body {
+    height: 100%;
+}
 
-   body {
-       margin: 0;
-   }
+body {
+    margin: 0;
+    overflow: hidden;
+}
 
-   .flex-container-center {
-       height: 100%;
-       padding: 0;
-       margin: 0;
-       display: -webkit-box;
-       display: -moz-box;
-       display: -ms-flexbox;
-       display: -webkit-flex;
-       display: flex;
-       align-items: center;
-       justify-content: center;
-   }
+.flex-container-center {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-   .btn-login {
-       width: 100%;
-       height: 60px;
-       border: 2px solid #277cff;
-       background-color: white;
-       color: #277cff;
-       transition: 0.25s;
-       cursor: pointer;
-       font-weight: bold;
-   }
+.btn-login {
+    width: 100%;
+    height: 60px;
+    border: 2px solid #277cff;
+    background-color: white;
+    color: #277cff;
+    transition: 0.25s;
+    cursor: pointer;
+    font-weight: bold;
+}
 
-       .btn-login:hover {
-           background-color: #277cff;
-           color: white;
-       }
+.hero-title{
+    font-size: 8rem;
+    line-height: 1.3;
+    font-family: 'Roboto';
+    border-left: 15px solid;
+}
 
-   #loginBox {
-       width: 400px;
-       background-color: white;
-   }
+.hero-title span{
+    background-color: #277cffb0;
+    padding: 0px 25px;
+}
 
-   .social-media {
-       width: 50px;
-       height: 50px;
-       margin: 10px;
-       border-radius: 4px;
-       border: 2px solid black;
-       transition: 0.15s;
-       padding: 0;
-       display: -webkit-box;
-       display: -moz-box;
-       display: -ms-flexbox;
-       display: -webkit-flex;
-       display: flex;
-       align-items: center;
-       justify-content: center;
-       cursor: pointer;
-       font-size: 1.7rem;
-   }
+.btn-login:hover {
+    background-color: #277cff;
+    color: white;
+}
 
-       .social-media.facebook {
-           border-color: #3b5998;
-           color: #3b5998;
-       }
+#loginBox {
+    width: 400px;
+    background-color: white;
+}
 
-           .social-media.facebook:hover {
-               background-color: #3b5998;
-               color: white;
-           }
+.social-media {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    border-radius: 4px;
+    border: 2px solid black;
+    transition: 0.15s;
+    padding: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.7rem;
+    border: none;
+}
 
-       .social-media.linkedin {
-           border-color: #007bb5;
-           color: #007bb5;
-       }
+.social-media.facebook {
+    border-color: #3b5998;
+    color: #3b5998;
+}
 
-           .social-media.linkedin:hover {
-               background-color: #007bb5;
-               color: white;
-           }
+.social-media.facebook:hover {
+    background-color: #3b5998;
+    color: white;
+}
 
-       .social-media.google {
-           border-color: #db4437;
-           color: #db4437;
-       }
+.social-media.linkedin {
+    border-color: #007bb5;
+    color: #007bb5;
+}
 
-           .social-media.google:hover {
-               background-color: #db4437;
-               color: white;
-           }
+.social-media.linkedin:hover {
+    background-color: #007bb5;
+    color: white;
+}
 
-       .social-media.microsoft {
-           border-color: #f35022;
-           color: #db4437;
-       }
+.social-media.google {
+    border-color: #db4437;
+    color: #db4437;
+}
 
-           .social-media.microsoft:hover {
-               background-color: #f35022;
-               color: white;
-           }
+.social-media.google:hover {
+    background-color: #db4437;
+    color: white;
+}
 
-       .social-media.conectado {
-           border-color: #3fb8bf;
-           color: #3fb8bf;
-       }
+.social-media.microsoft {
+    border-color: #f35022;
+    color: #db4437;
+}
 
-   .form-control:focus {
-       border-color: #5472d3;
-       box-shadow: 0 0 0 0.2rem rgba(84, 114, 211, 0.25);
-   }
+.social-media.microsoft:hover {
+    background-color: #f35022;
+    color: white;
+}
 
-   .login-header {
-       color: #277cff;
-       margin: -1rem;
-       height: 70px;
-   }
+.social-media.conectado {
+    border-color: #3fb8bf;
+    color: #3fb8bf;
+}
 
-   #wpLogin {
-       width: 30%;
-   }
+.form-control:focus {
+    border-color: #5472d3;
+    box-shadow: 0 0 0 0.2rem rgba(84, 114, 211, 0.25);
+}
 
-   #publicidade {
-       width: 70%;
-   }
+.login-header {
+    color: #277cff;
+    margin: -1rem;
+    height: 70px;
+}
 
-   @media (max-width: 900px) {
-       #loginBox {
-           width: 300px;
-           /*height: 510px;*/
-       }
+#wpLogin {
+    width: 30%;
+    -webkit-box-shadow: 8px 0px 64px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 8px 0px 64px 0px rgba(0,0,0,0.75);
+    box-shadow: 8px 0px 64px 0px rgba(0,0,0,0.75);
+}
 
-       .social-media {
-           font-size: 1.2rem;
-           height: 40px;
-       }
+#publicidade {
+    width: 70%;
+}
 
-       #wpLogin {
-           width: 100% !important;
-       }
+@media (max-width: 1500px) {
+    #wpLogin {
+        width: 40%;
+    }
+    #publicidade {
+        width: 60%;
+    }
+    .hero-title{
+        font-size: 5.5rem;
+        border-left: 10px solid;
+    }
+}
 
-       #publicidade {
-           display: none;
-       }
-   }
+@media (max-width: 1024px) {
+    #loginBox {
+        width: 300px;
+        /*height: 510px;*/
+    }
+    .social-media {
+        font-size: 1.2rem;
+        height: 40px;
+    }
+    #wpLogin {
+        width: 100% !important;
+    }
+    #publicidade {
+        display: none;
+    }
+}
 
-   @media (max-width: 1500px) {
-       #wpLogin {
-           width: 50%;
-       }
+.half {
+    width: 50%;
+    height: 100%;
+    top: 0;
+    position: relative;
+    float: left;
+}
 
-       #publicidade {
-           width: 50%;
-       }
-   }
-   .half {
-       width: 50%;
-       height: 100%;
-       top: 0;
-       position: relative;
-       float: left;
-   }
+.fundo,
+.fundo-cor {
+    background: url(../images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.4;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 
-   .fundo, .fundo-cor {
-       background: url(https://images.unsplash.com/photo-1523978591478-c753949ff840?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c92fa17c403874495c84c6f31f5ef403&auto=format&fit=crop&w=1350&q=100);
-       background-repeat: no-repeat;
-       background-size: cover;
-       opacity: 0.4;
-       z-index: -1;
-       position: absolute;
-       top: 0;
-       left: 0;
-       width: 100%;
-       height: 100%;
-   }
+.fundo-cor {
+    background: #277cff;
+}
 
-   .fundo-cor {
-       background: #277cff;
-   }
-
-   .hero {
-       font-size: 90px;
-       font-weight: bold;
-       font-family: 'Roboto', sans-serif;
-   }
-
-   .input-group-text{
-       background-color: unset;
-   }
-
-.img-center {
-    display: block;
-    margin: 0 auto;
+.input-group-text {
+    background-color: unset;
 }

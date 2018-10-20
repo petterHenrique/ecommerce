@@ -1,7 +1,8 @@
-	<script src="<?=base_url()?>assets/js/jquery.min.js"></script>
+
+
 	<script src="<?=base_url()?>assets/js/bootstrap.min.js"></script>
 	<script src="<?=base_url()?>assets/js/metisMenu.min.js"></script>
-	<script src="<?=base_url()?>assets/js/sb-admin-2.js"></script>
+
 	<script src="<?=base_url()?>assets/js/pnotify.custom.min.js"></script>
 	<script src="<?=base_url()?>assets/js/notificacao.js"></script>
 	<script src="<?=base_url()?>assets/js/ui-block.js"></script>
@@ -14,6 +15,12 @@
 	<script src="<?=base_url()?>assets/js/dropzone.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/locales/bootstrap-datepicker.pt-BR.min.js"></script>
+
+    <script src="<?=base_url()?>assets/js/require.min.js"></script>
+    <script src="<?=base_url()?>assets/js/dashboard.js"></script>
+    <script src="<?=base_url()?>assets/plugins/maps-google/plugin.js"></script>
+    <script src="<?=base_url()?>assets/plugins/input-mask/plugin.js"></script>
+
     <script>
 
 

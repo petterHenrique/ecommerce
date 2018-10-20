@@ -13,15 +13,20 @@
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="<?=base_url()?>assets/css/pnotify.custom.min.css" rel="stylesheet" type="text/css">
     <link href="<?=base_url()?>assets/css/login.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-
 		<div class="half" id="publicidade">
             <div class="fundo-cor"></div>
             <div class="fundo"></div>
+            <div class="w-100 h-100 d-flex justify-content-center align-items-center p-5">
+                <h1 class="hero-title text-white w-100 p-5">
+                    Crie sua loja virtual de maneira <br><span id="wpChamada">fácil</span>
+                </h1>
+            </div>
         </div>
         <div class="half" id="wpLogin">
             <div class="flex-container-center">
@@ -30,7 +35,7 @@
                         <div class="login-header flex-container-center">
                            <img class="img-responsive img-center" src="<?=base_url()?>assets/images/logo-admin.png" />
                         </div>
-                        <div class="mt-4 p-3">
+                        <div class="mt-5 p-3">
                             <div class="row">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
@@ -87,12 +92,10 @@
 	<script src="<?=base_url()?>assets/js/bootstrap.min.js"></script>
 
 	<script src="<?=base_url()?>assets/js/pnotify.custom.min.js"></script>
-
 	<script src="<?=base_url()?>assets/js/notificacao.js"></script>
-	
 	<script src="<?=base_url()?>assets/js/ui-block.js"></script>
-
 	<script src="<?=base_url()?>assets/js/block.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
 
 	<script>
 		const validarLogin = new ValidarAutenticacao(); 
@@ -115,6 +118,15 @@
 					validarLogin.Validar();
 				}
 			});
+
+            new Typed("#wpChamada", {
+                strings: [ 'fácil', 'simples', 'eficiente', 'dinâmica', 'atrativa' ],
+                typeSpeed: 70,
+                shuffle: true,
+                loop: true,
+                backDelay:1200,
+                showCursor: false
+            });
 		});
 		function ValidarAutenticacao(){
 			var self = this;

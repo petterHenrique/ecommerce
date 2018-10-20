@@ -15,11 +15,12 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
                 	<hr>
-                	<ul class="breadcrumb">
+                	<ul class="breadcrumb w-100 p-0">
 					    <li><a href="<?=base_url()?>index.php/dashboard/index">Home</a></li>
 					    <li><a href="<?=base_url()?>index.php/categoriasadmin/index">Categorias</a></li>
 					    <li class="active">Cadastro</li>
 					</ul>
+                    <h2>Criar nova Categoria</h2>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
