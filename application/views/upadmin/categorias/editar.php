@@ -7,23 +7,26 @@
     <?php $this->load->view('upadmin/inc/header');?>
 </head>
 <body>
-    <div id="wrapper">
-        <?php 
-        	$this->load->view('upadmin/inc/menu');  
-        ?>
-        <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                	<hr>
-                	<ul class="breadcrumb w-100 p-0">
-					    <li><a href="<?=base_url()?>index.php/dashboard/index">Home</a></li>
-					    <li><a href="<?=base_url()?>index.php/categoriasadmin/index">Categorias</a></li>
-					    <li class="active">Cadastro</li>
-					</ul>
-                    <h2>Criar nova Categoria</h2>
+
+<div class="page">
+    <div class="page-main">
+
+        <?php $this->load->view('upadmin/layout/navbar.php');?>
+
+        <div class="my-3 my-md-5">
+            <div class="container">
+                <div class="my-3 mx-0">
+                    <ul class="breadcrumb w-100 p-0">
+                        <li class="breadcrumb-item">
+                            <a href="<?=base_url()?>index.php/dashboard/index">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="<?=base_url()?>index.php/categoriasAdmin/index">Categorias</a>
+                        </li>
+                        <li class="breadcrumb-item active">Edição</li>
+                    </ul>
+                    <h2>Editar Categoria</h2>
                 </div>
-                <!-- /.col-lg-12 -->
-            </div>
             <!-- /.row -->
             <div class="row">
             	<div class="col-lg-12 col-md-12 col-sm-12">
@@ -75,14 +78,18 @@
 						</div>
                     </div>
 
-                    <div class="form-group">
+                    <!--div class="form-group">
                         <label class="btn btn-primary btn-file">
 						    <i class="fa fa-picture-o" aria-hidden="true"></i> Carregar Foto <input id="foto" type="file" hidden>
 						</label>
 						<hr>
-						<img style="width:250px;height:250px;" src="" id="foto-categoria" />
+						<?php if(empty($categorias[0]['FOTO_CATEGORIA'])) {?>
+							<img style="width:250px;height:250px;display:none;" src="" id="foto-categoria" />
+						<?php } else { ?>
+							<img style="width:250px;height:250px;" src="<?=$categorias[0]['FOTO_CATEGORIA']?>" id="foto-categoria" />
+						<?php } ?>
                     </div>
-                    <hr>
+                    <hr-->
                     <div class="text-center"> 
                     	<button id="salvar-categoria" class="btn btn-success"><span class="fa fa-floppy-o"></span> Salvar Categoria</button>
                     </div>

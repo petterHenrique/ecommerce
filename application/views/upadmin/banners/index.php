@@ -7,25 +7,32 @@
     <?php $this->load->view('upadmin/inc/header');?>
 </head>
 <body>
-    <div id="wrapper">
-        <?php $this->load->view('upadmin/inc/menu');?>
-        <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 class="page-header text-primary">Baners</h2>
+<div class="page">
+    <div class="page-main">
+        <?php $this->load->view('upadmin/layout/navbar.php');?>
+        <div class="my-3 my-md-5">
+            <div class="container">
+                <div class="my-3 mx-0">
+                    <ul class="breadcrumb w-100 p-0">
+                        <li class="breadcrumb-item">
+                            <a href="<?=base_url()?>index.php/dashboard/index">Home</a>
+                        </li>
+                        <li class="breadcrumb-item active">Baners</li>
+                    </ul>
+                    <h2>Baners</h2>
                 </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
             <!-- /.row -->
             <div class="row">
-                <div class="col-lg-12">
-               		<div class="input-group">
-					  <input type="text" class="form-control dados-pesquisa" placeholder="Pesquisar">
-					  <span style="border:1px solid #337AB7; cursor:pointer;background:#337AB7;color:white;" class="input-group-addon btn-pesquisar">Buscar</span>
-					</div>
+                <div class="col">
+                    <div class="input-group">
+                        <input type="text" class="form-control dados-pesquisa" placeholder="Pesquisar...">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary btn-pesquisar">
+                                <span class="fa fa-search"></span>&nbsp; Buscar
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <!-- /.col-lg-8 -->
             </div>
             <!-- /.row -->
             <hr>

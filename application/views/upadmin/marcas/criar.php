@@ -7,74 +7,78 @@
     <?php $this->load->view('upadmin/inc/header');?>
 </head>
 <body>
-<div class="page">
-    <div class="page-main">
-
-        <?php $this->load->view('upadmin/layout/navbar.php');?>
-
-        <div class="my-3 my-md-5">
-            <div class="container">
-                <div class="my-3 mx-0">
-                    <ul class="breadcrumb w-100">
-                        <li class="breadcrumb-item">
-                            <a href="<?=base_url()?>index.php/dashboard/index">Home</a>
-                        </li>
-                        <li class="breadcrumb-item">
-                            <a href="<?=base_url()?>index.php/marcasAdmin/index">Marcas</a>
-                        </li>
-                        <li class="breadcrumb-item active">Cadastrar nova Marca</li>
-                    </ul>
+    <div id="wrapper">
+        <?php $this->load->view('upadmin/inc/menu');?>
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                	<hr>
+                	<ul class="breadcrumb">
+					    <li><a href="<?=base_url()?>index.php/dashboard/index">Home</a></li>
+					    <li><a href="<?=base_url()?>index.php/marcasadmin/index">Marcas</a></li>
+					    <li class="active">Cadastro</li>
+					</ul>
                 </div>
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12">
-                        <input type="hidden" value="0" id="codigo-marca"/>
-                        <div class="form-group">
-                            <label>Nome:</label>
-                            <input id="nome-marca" class="form-control" placeholder="Exemplo: Nike">
-                        </div>
-                        <div class="form-group">
-                            <label>Descrição Marca:</label>
-                            <textarea id="descricao-marca" style="resize: none;" class="form-control" rows="3" placeholder="Exemplo: Nike apresenta diversos produtos de qualidade ..."></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Title SEO:</label>
-                            <input id="title-seo" class="form-control" placeholder="Nome Loja: Produtos Marca Nike">
-                        </div>
-                        <div class="form-group">
-                            <label>Keywords SEO:</label>
-                            <input id="keyword-seo" class="form-control" placeholder="Exemplo: nike, tênis nike, acessórios, original">
-                        </div>
-                        <div class="form-group">
-                            <label>Description SEO:</label>
-                            <textarea id="description-seo" style="resize: none;" class="form-control" rows="3" placeholder="Exemplo: Nike de ótima qualidade ..."></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Url Amigável:</label>
-                            <input id="url-amigavel" class="form-control" placeholder="Exemplo: nome-da-marca">
-                        </div>
-                        <div class="form-group">
-                            <div class="checkbox">
-                                <label><input id="ativo" checked type="checkbox" value="">Ativo</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="btn btn-primary btn-file">
-                                <i class="fa fa-picture-o" aria-hidden="true"></i> Carregar Foto <input id="foto" type="file" hidden>
-                            </label>
-                            <hr>
-                            <img style="width:250px;height:250px;" src="#" id="foto-marca" />
-                        </div>
-                        <hr>
-                        <div class="text-center">
-                            <button id="salvar-marca" class="btn btn-success"><span class="fa fa-floppy-o"></span> Salvar Marca</button>
-                        </div>
-                        </br>
-                    </div>
-                </div>
+                <!-- /.col-lg-12 -->
             </div>
+            <!-- /.row -->
+            <div class="row">
+            	<div class="col-lg-12 col-md-12 col-sm-12">
+            		<input type="hidden" value="0" id="codigo-marca"/>
+            		<div class="form-group">
+                        <label>Nome:</label>
+                        <input id="nome-marca" class="form-control">
+                        <p class="help-block">Exemplo: Nike</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Descrição Marca:</label>
+                        <textarea id="descricao-marca" style="resize: none;" class="form-control" rows="3"></textarea>
+                        <p class="help-block">Exemplo: Nike apresenta diversos produtos de qualidade ...</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Title SEO:</label>
+                        <input id="title-seo" class="form-control">
+                        <p class="help-block">Exemplo: Nome Loja: Produtos Marca Nike</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Keywords SEO:</label>
+                        <input id="keyword-seo" class="form-control">
+                        <p class="help-block">Exemplo: nike, tênis nike, acessórios, original</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Description SEO:</label>
+                        <textarea id="description-seo" style="resize: none;" class="form-control" rows="3"></textarea>
+                        <p class="help-block">Exemplo: Nike de ótima qualidade ...</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Url Amigável:</label>
+                        <input id="url-amigavel" class="form-control">
+                        <p class="help-block">Exemplo: nome-da-marca</p>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+						  <label><input id="ativo" checked type="checkbox" value="">Ativo</label>
+						</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="btn btn-primary btn-file">
+						    <i class="fa fa-picture-o" aria-hidden="true"></i> Carregar Foto <input id="foto" type="file" hidden>
+						</label>
+						<hr>
+						<img style="width:250px;height:250px;" src="" id="foto-marca" />
+                    </div>
+                    <hr>
+                    <div class="text-center"> 
+                    	<button id="salvar-marca" class="btn btn-success"><span class="fa fa-floppy-o"></span> Salvar Marca</button>
+                    </div>
+                    </br>
+            	</div>
+            </div>
+            <!-- /.row -->
+            
         </div>
+        <!-- /#page-wrapper -->
     </div>
-</div>
 </body>
 	<?php $this->load->view('upadmin/inc/footer');?>
 	<script src="<?=base_url()?>assets/js/categorias/categoriasAdmin.js"></script>

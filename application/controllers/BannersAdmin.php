@@ -20,19 +20,19 @@ class BannersAdmin extends MasterLogado {
 	public function editar(){
 		$id = $this->input->get("id");
 		if(!empty($id)){
-			$this->load->model("PaginasAdminModel");
-			$dados["dadosPagina"] = $this->PaginasAdminModel->buscarPaginaPorId($id);
-			$this->load->view('/upadmin/paginas/editar', $dados);
+			$this->load->model("BannersAdminModel");
+			$dados["banner"] = $this->BannersAdminModel->buscarBanerPorId($id);
+			$this->load->view('/upadmin/banners/editar', $dados);
 		}else{
-			redirect("/upadmin/paginas/index");
+			redirect("/upadmin/banners/index");
 		}
 	}
 
-	public function excluirPagina(){
+	public function excluirBaner(){
 		$dados = $this->input->post("id");
 		if(!empty($dados)){
-			$this->load->model("PaginasAdminModel");
-			if($this->PaginasAdminModel->excluir($dados)){
+			$this->load->model("BannersAdminModel");
+			if($this->BannersAdminModel->excluir($dados)){
 				$this->output
 					->set_status_header(200)
         			->set_content_type('application/json')
@@ -50,7 +50,7 @@ class BannersAdmin extends MasterLogado {
 		}
 	}
 
-	public function pesquisarPagina(){
+	public function pesquisarBaner(){
 		$dados = $this->input->post("dados");
 		$this->load->model("PaginasAdminModel");
 		if(!empty($dados)){

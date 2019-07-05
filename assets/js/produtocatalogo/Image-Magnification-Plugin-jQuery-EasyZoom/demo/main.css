@@ -1,0 +1,9 @@
+.container {
+    margin: 150px auto;
+    width: 1000px;
+    height: 1000px;
+}
+
+.container .easyzoom {
+    margin: 50px;
+}

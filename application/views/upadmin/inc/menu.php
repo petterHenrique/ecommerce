@@ -1,3 +1,4 @@
+
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;background:#337AB7;">
     <div class="navbar-header">
@@ -7,7 +8,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="<?=base_url()?>/index.php/login"><img style="margin-top:-12px;width:100px;" class="img-responsive" src="https://www.upsy.com.br/img/logo-upsy.png"/></a>
+        <a class="navbar-brand" href="<?=base_url()?>/index.php/Dashboard/index"><img style="margin-top:-12px;width:100px;" class="img-responsive" src="https://www.upsy.com.br/img/logo-upsy.png"/></a>
     </div>
     <!-- /.navbar-header -->
 
@@ -120,10 +121,10 @@
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href="tables.html"><i class="fa fa-shopping-basket fa-fw"></i> Pedidos</a>
+                    <a href="<?=base_url()?>index.php/pedidosAdmin/index"><i class="fa fa-shopping-basket fa-fw"></i> Pedidos</a>
                 </li>
                 <li>
-                    <a href="tables.html"><i class="fa fa-user fa-fw"></i> Clientes</a>
+                    <a href="<?=base_url()?>index.php/clientesAdmin/index"><i class="fa fa-user fa-fw"></i> Clientes</a>
                 </li>
                 <li>
                     <a href="tables.html"><i class="fa fa-exchange fa-fw"></i> Marketplace
@@ -170,7 +171,7 @@
                     <a href="#"><i class="fa fa-edit fa-fw"></i> Configurações<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="<?=base_url()?>index.php/categoriasadmin/index">Dados Empresa</a>
+                            <a href="<?=base_url()?>index.php/dadosEmpresaAdmin/index">Dados Empresa</a>
                         </li>
                         <li>
                             <a href="morris.html">Frete</a>
@@ -189,6 +190,6 @@
 </nav>
 
 <!--loading-->
-<div id="spinner" style="display:none;">
+<!--div id="spinner" style="display:none;">
 	<img style="width:80px;" src="http://thinkfuture.com/wp-content/uploads/2013/10/loading_spinner.gif" />
-</div>
+</div-->

@@ -5,13 +5,12 @@
 <html lang="pt-br">
 <head>
      <?php include "inc/header.php"; ?>
+
 </head>
 <body>
 <div class="page">
     <div class="page-main">
-
         <?php include "layout/navbar.php"; ?>
-
         <div class="my-3 my-md-5">
             <div class="container">
                 <div class="page-header">
@@ -23,124 +22,48 @@
                     <div class="col-6 col-sm-4 col-lg-2">
                         <div class="card">
                             <div class="card-body p-3 text-center">
-                                <div class="text-right text-green">
-                                    6%
-                                    <i class="fe fe-chevron-up"></i>
-                                </div>
-                                <div class="h1 m-0">43</div>
-                                <div class="text-muted mb-4">New Tickets</div>
+                                <div class="h1 m-0"><?=$contadores['COMENTARIOS']?></div>
+                                <div class="text-muted mb-4">Comentários</div>
                             </div>
                         </div>
                     </div>
                     <div class="col-6 col-sm-4 col-lg-2">
                         <div class="card">
                             <div class="card-body p-3 text-center">
-                                <div class="text-right text-red">
-                                    -3%
-                                    <i class="fe fe-chevron-down"></i>
-                                </div>
-                                <div class="h1 m-0">17</div>
-                                <div class="text-muted mb-4">Closed Today</div>
+                                <div class="h1 m-0"><?=$contadores['PEDIDOS_HOJE']?></div>
+                                <div class="text-muted mb-4">Pedidos Hoje</div>
                             </div>
                         </div>
                     </div>
                     <div class="col-6 col-sm-4 col-lg-2">
                         <div class="card">
                             <div class="card-body p-3 text-center">
-                                <div class="text-right text-green">
-                                    9%
-                                    <i class="fe fe-chevron-up"></i>
-                                </div>
-                                <div class="h1 m-0">7</div>
-                                <div class="text-muted mb-4">New Replies</div>
+                                <div class="h1 m-0"><?=$contadores['TICKET']?></div>
+                                <div class="text-muted mb-4">Ticket Médio</div>
                             </div>
                         </div>
                     </div>
                     <div class="col-6 col-sm-4 col-lg-2">
                         <div class="card">
                             <div class="card-body p-3 text-center">
-                                <div class="text-right text-green">
-                                    3%
-                                    <i class="fe fe-chevron-up"></i>
-                                </div>
-                                <div class="h1 m-0">27.3K</div>
-                                <div class="text-muted mb-4">Followers</div>
+                                <div class="h1 m-0"><?=$contadores['CLIENTES']?></div>
+                                <div class="text-muted mb-4">Clientes</div>
                             </div>
                         </div>
                     </div>
                     <div class="col-6 col-sm-4 col-lg-2">
                         <div class="card">
                             <div class="card-body p-3 text-center">
-                                <div class="text-right text-red">
-                                    -2%
-                                    <i class="fe fe-chevron-down"></i>
-                                </div>
-                                <div class="h1 m-0">$95</div>
-                                <div class="text-muted mb-4">Daily Earnings</div>
+                                <div class="h1 m-0"><?=$contadores['FATURAMENTO']?></div>
+                                <div class="text-muted mb-4">Faturamento</div>
                             </div>
                         </div>
                     </div>
                     <div class="col-6 col-sm-4 col-lg-2">
                         <div class="card">
                             <div class="card-body p-3 text-center">
-                                <div class="text-right text-red">
-                                    -1%
-                                    <i class="fe fe-chevron-down"></i>
-                                </div>
-                                <div class="h1 m-0">621</div>
-                                <div class="text-muted mb-4">Products</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="card p-3">
-                            <div class="d-flex align-items-center">
-                    <span class="stamp stamp-md bg-blue mr-3">
-                      <i class="fe fe-dollar-sign"></i>
-                    </span>
-                                <div>
-                                    <h4 class="m-0"><a href="javascript:void(0)">132 <small>Sales</small></a></h4>
-                                    <small class="text-muted">12 waiting payments</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="card p-3">
-                            <div class="d-flex align-items-center">
-                    <span class="stamp stamp-md bg-green mr-3">
-                      <i class="fe fe-shopping-cart"></i>
-                    </span>
-                                <div>
-                                    <h4 class="m-0"><a href="javascript:void(0)">78 <small>Orders</small></a></h4>
-                                    <small class="text-muted">32 shipped</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="card p-3">
-                            <div class="d-flex align-items-center">
-                    <span class="stamp stamp-md bg-red mr-3">
-                      <i class="fe fe-users"></i>
-                    </span>
-                                <div>
-                                    <h4 class="m-0"><a href="javascript:void(0)">1,352 <small>Members</small></a></h4>
-                                    <small class="text-muted">163 registered today</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="card p-3">
-                            <div class="d-flex align-items-center">
-                    <span class="stamp stamp-md bg-yellow mr-3">
-                      <i class="fe fe-message-square"></i>
-                    </span>
-                                <div>
-                                    <h4 class="m-0"><a href="javascript:void(0)">132 <small>Comments</small></a></h4>
-                                    <small class="text-muted">16 waiting</small>
-                                </div>
+                                <div class="h1 m-0"><?=$contadores['PRODUTOS']?></div>
+                                <div class="text-muted mb-4">Produtos</div>
                             </div>
                         </div>
                     </div>
@@ -152,433 +75,159 @@
                                 <table class="table table-hover table-outline table-vcenter text-nowrap card-table">
                                     <thead>
                                     <tr>
-                                        <th class="text-center w-1"><i class="icon-people"></i></th>
-                                        <th>User</th>
-                                        <th>Usage</th>
-                                        <th class="text-center">Payment</th>
-                                        <th>Activity</th>
-                                        <th class="text-center">Satisfaction</th>
+                                        <th class="text-center w-1">N° Pedido</th>
+                                        <th>Cliente</th>
+                                        <th>Total</th>
+                                        <th class="text-center">Pagamento</th>
+                                        <th>Atividade</th>
+                                        <th class="text-center">Status</th>
                                         <th class="text-center"><i class="icon-settings"></i></th>
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    <?php 
+                                    	foreach ($pedidos as $pedido) { 
+                                    ?>
+                        			
                                     <tr>
                                         <td class="text-center">
-                                            <div class="avatar d-block" style="background-image: url(demo/faces/female/26.jpg)">
-                                                <span class="avatar-status bg-green"></span>
-                                            </div>
+                                            <?=$pedido['CODIGO_PEDIDO']?>
                                         </td>
                                         <td>
-                                            <div>Elizabeth Martin</div>
-                                            <div class="small text-muted">
-                                                Registered: Mar 19, 2018
-                                            </div>
+                                            <a href="<?=base_url()?>index.php/pedidosAdmin/detalhe?id=<?=$pedido['COD_PEDIDO']?>"><?=$pedido['NOME_CLIENTE']?></a>
                                         </td>
                                         <td>
-                                            <div class="clearfix">
-                                                <div class="float-left">
-                                                    <strong>42%</strong>
-                                                </div>
-                                                <div class="float-right">
-                                                    <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                                                </div>
-                                            </div>
-                                            <div class="progress progress-xs">
-                                                <div class="progress-bar bg-yellow" role="progressbar" style="width: 42%"
-                                                     aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
+        									R$ 
+        									<?php 
+
+        									$qtd = (int)$pedido['QTD_PRODUTO'];
+        									$vlrProduto = number_format($pedido['VLR_PRODUTO'], 2, '.', ' ');
+
+       										$resultado = $qtd * $vlrProduto;
+        									echo number_format($resultado, 2, ',', ' ');
+        									?>
+        					
                                         </td>
                                         <td class="text-center">
-                                            <i class="payment payment-visa"></i>
+
+                                        <?php 
+                                     
+                                        	if($pedido['FORMA_PAGAMENTO'] == "PAGSEGUROCARTAO"){
+                                        		echo '<i class="payment payment-visa"></i>';
+                                        	}else {
+                                        		echo '<i class="payment payment-boleto2"></i>';
+                                        	}
+                                        ?>
+
+                                            
                                         </td>
                                         <td>
-                                            <div class="small text-muted">Last login</div>
-                                            <div>4 minutes ago</div>
+                                            <div class="small text-muted">Registrado</div>
+                                            <div><?=date("d/m/Y", strtotime($pedido['DTA_CRIACAO_PEDIDO']));?></div>
                                         </td>
                                         <td class="text-center">
-                                            <div class="mx-auto chart-circle chart-circle-xs" data-value="0.42" data-thickness="3" data-color="blue">
-                                                <div class="chart-circle-value">42%</div>
-                                            </div>
+                                            <span class="badge badge-success"><?=$pedido['DES_STATUS']?></span>
                                         </td>
                                         <td class="text-center">
                                             <div class="item-action dropdown">
                                                 <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
                                                 <div class="dropdown-menu dropdown-menu-right">
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i> Action </a>
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Another action </a>
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i> Something else here</a>
-                                                    <div class="dropdown-divider"></div>
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i> Separated link</a>
+                                                    <a href="<?=base_url()?>index.php/pedidosAdmin/detalhe?id=<?=$pedido['COD_PEDIDO']?>" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i> Detalhes </a>
+                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Alterar Status </a>
                                                 </div>
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td class="text-center">
-                                            <div class="avatar d-block" style="background-image: url(demo/faces/female/17.jpg)">
-                                                <span class="avatar-status bg-green"></span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div>Michelle Schultz</div>
-                                            <div class="small text-muted">
-                                                Registered: Mar 2, 2018
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="clearfix">
-                                                <div class="float-left">
-                                                    <strong>0%</strong>
-                                                </div>
-                                                <div class="float-right">
-                                                    <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                                                </div>
-                                            </div>
-                                            <div class="progress progress-xs">
-                                                <div class="progress-bar bg-red" role="progressbar" style="width: 0%"
-                                                     aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            <i class="payment payment-googlewallet"></i>
-                                        </td>
-                                        <td>
-                                            <div class="small text-muted">Last login</div>
-                                            <div>5 minutes ago</div>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="mx-auto chart-circle chart-circle-xs" data-value="0.0" data-thickness="3" data-color="blue">
-                                                <div class="chart-circle-value">0%</div>
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="item-action dropdown">
-                                                <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i> Action </a>
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Another action </a>
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i> Something else here</a>
-                                                    <div class="dropdown-divider"></div>
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i> Separated link</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">
-                                            <div class="avatar d-block" style="background-image: url(demo/faces/female/21.jpg)">
-                                                <span class="avatar-status bg-green"></span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div>Crystal Austin</div>
-                                            <div class="small text-muted">
-                                                Registered: Apr 7, 2018
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="clearfix">
-                                                <div class="float-left">
-                                                    <strong>96%</strong>
-                                                </div>
-                                                <div class="float-right">
-                                                    <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                                                </div>
-                                            </div>
-                                            <div class="progress progress-xs">
-                                                <div class="progress-bar bg-green" role="progressbar" style="width: 96%"
-                                                     aria-valuenow="96" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            <i class="payment payment-mastercard"></i>
-                                        </td>
-                                        <td>
-                                            <div class="small text-muted">Last login</div>
-                                            <div>a minute ago</div>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="mx-auto chart-circle chart-circle-xs" data-value="0.96" data-thickness="3" data-color="blue">
-                                                <div class="chart-circle-value">96%</div>
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="item-action dropdown">
-                                                <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i> Action </a>
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Another action </a>
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i> Something else here</a>
-                                                    <div class="dropdown-divider"></div>
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i> Separated link</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">
-                                            <div class="avatar d-block" style="background-image: url(demo/faces/male/32.jpg)">
-                                                <span class="avatar-status bg-green"></span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div>Douglas Ray</div>
-                                            <div class="small text-muted">
-                                                Registered: Jan 15, 2018
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="clearfix">
-                                                <div class="float-left">
-                                                    <strong>6%</strong>
-                                                </div>
-                                                <div class="float-right">
-                                                    <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                                                </div>
-                                            </div>
-                                            <div class="progress progress-xs">
-                                                <div class="progress-bar bg-red" role="progressbar" style="width: 6%"
-                                                     aria-valuenow="6" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            <i class="payment payment-shopify"></i>
-                                        </td>
-                                        <td>
-                                            <div class="small text-muted">Last login</div>
-                                            <div>a minute ago</div>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="mx-auto chart-circle chart-circle-xs" data-value="0.06" data-thickness="3" data-color="blue">
-                                                <div class="chart-circle-value">6%</div>
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="item-action dropdown">
-                                                <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i> Action </a>
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Another action </a>
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i> Something else here</a>
-                                                    <div class="dropdown-divider"></div>
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i> Separated link</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">
-                                            <div class="avatar d-block" style="background-image: url(demo/faces/female/12.jpg)">
-                                                <span class="avatar-status bg-green"></span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div>Teresa Reyes</div>
-                                            <div class="small text-muted">
-                                                Registered: Mar 4, 2018
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="clearfix">
-                                                <div class="float-left">
-                                                    <strong>36%</strong>
-                                                </div>
-                                                <div class="float-right">
-                                                    <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                                                </div>
-                                            </div>
-                                            <div class="progress progress-xs">
-                                                <div class="progress-bar bg-red" role="progressbar" style="width: 36%"
-                                                     aria-valuenow="36" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            <i class="payment payment-ebay"></i>
-                                        </td>
-                                        <td>
-                                            <div class="small text-muted">Last login</div>
-                                            <div>2 minutes ago</div>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="mx-auto chart-circle chart-circle-xs" data-value="0.36" data-thickness="3" data-color="blue">
-                                                <div class="chart-circle-value">36%</div>
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="item-action dropdown">
-                                                <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i> Action </a>
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Another action </a>
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i> Something else here</a>
-                                                    <div class="dropdown-divider"></div>
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i> Separated link</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">
-                                            <div class="avatar d-block" style="background-image: url(demo/faces/female/4.jpg)">
-                                                <span class="avatar-status bg-green"></span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div>Emma Wade</div>
-                                            <div class="small text-muted">
-                                                Registered: Mar 20, 2018
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="clearfix">
-                                                <div class="float-left">
-                                                    <strong>7%</strong>
-                                                </div>
-                                                <div class="float-right">
-                                                    <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                                                </div>
-                                            </div>
-                                            <div class="progress progress-xs">
-                                                <div class="progress-bar bg-red" role="progressbar" style="width: 7%"
-                                                     aria-valuenow="7" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            <i class="payment payment-paypal"></i>
-                                        </td>
-                                        <td>
-                                            <div class="small text-muted">Last login</div>
-                                            <div>a minute ago</div>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="mx-auto chart-circle chart-circle-xs" data-value="0.07" data-thickness="3" data-color="blue">
-                                                <div class="chart-circle-value">7%</div>
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="item-action dropdown">
-                                                <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i> Action </a>
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Another action </a>
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i> Something else here</a>
-                                                    <div class="dropdown-divider"></div>
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i> Separated link</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">
-                                            <div class="avatar d-block" style="background-image: url(demo/faces/female/27.jpg)">
-                                                <span class="avatar-status bg-green"></span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div>Carol Henderson</div>
-                                            <div class="small text-muted">
-                                                Registered: Feb 22, 2018
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="clearfix">
-                                                <div class="float-left">
-                                                    <strong>80%</strong>
-                                                </div>
-                                                <div class="float-right">
-                                                    <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                                                </div>
-                                            </div>
-                                            <div class="progress progress-xs">
-                                                <div class="progress-bar bg-green" role="progressbar" style="width: 80%"
-                                                     aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            <i class="payment payment-visa"></i>
-                                        </td>
-                                        <td>
-                                            <div class="small text-muted">Last login</div>
-                                            <div>9 minutes ago</div>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="mx-auto chart-circle chart-circle-xs" data-value="0.8" data-thickness="3" data-color="blue">
-                                                <div class="chart-circle-value">80%</div>
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="item-action dropdown">
-                                                <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i> Action </a>
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Another action </a>
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i> Something else here</a>
-                                                    <div class="dropdown-divider"></div>
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i> Separated link</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">
-                                            <div class="avatar d-block" style="background-image: url(demo/faces/male/20.jpg)">
-                                                <span class="avatar-status bg-green"></span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div>Christopher Harvey</div>
-                                            <div class="small text-muted">
-                                                Registered: Jan 22, 2018
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="clearfix">
-                                                <div class="float-left">
-                                                    <strong>83%</strong>
-                                                </div>
-                                                <div class="float-right">
-                                                    <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                                                </div>
-                                            </div>
-                                            <div class="progress progress-xs">
-                                                <div class="progress-bar bg-green" role="progressbar" style="width: 83%"
-                                                     aria-valuenow="83" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            <i class="payment payment-googlewallet"></i>
-                                        </td>
-                                        <td>
-                                            <div class="small text-muted">Last login</div>
-                                            <div>8 minutes ago</div>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="mx-auto chart-circle chart-circle-xs" data-value="0.83" data-thickness="3" data-color="blue">
-                                                <div class="chart-circle-value">83%</div>
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="item-action dropdown">
-                                                <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i> Action </a>
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Another action </a>
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i> Something else here</a>
-                                                    <div class="dropdown-divider"></div>
-                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i> Separated link</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
+
+                                    <?php 
+                                		}
+                                    ?>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-4">
+
+                    <!-- orçamentos -->
+                     <div class="col-sm-12 col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Browser Stats</h4>
+                                <h4 class="card-title">Orçamentos</h4>
+                            </div>
+                           	<table class="table table-hover table-outline table-vcenter text-nowrap card-table">
+                                <thead>
+                                    <tr>
+  
+                                        <th>Cliente</th>
+                                        <th>E-mail</th>
+                                        <th class="text-center">Telefone</th>
+                                        <th>Região</th>
+                                        <th class="text-center">Produto</th>
+                                        <th class="text-center">Status</th>
+                                        <th class="text-center">Data Solitação</th>
+                                        <th class="text-center"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php foreach ($orcamentos as $orcamento) { ?>
+                                	<tr>
+
+                                        <td>
+                                            <?=$orcamento['DES_CLIENTE']?>
+                                        </td>
+                                        <td>
+        									<?=$orcamento['DES_EMAIL']?>
+                                        </td>
+                                        <td class="text-center">
+                                            <?=$orcamento['DES_TELEFONE']?>
+                                        </td>
+                                        <td class="text-center">
+                                            <span style="text-transform:uppercase;"><?=$orcamento['DES_UF']?></span>
+                                        </td>
+                                         <td class="text-center">
+                                            <?=$orcamento['NOME_PRODUTO']?>
+                                        </td>
+                                        <td class="text-center">
+                                            <?php 
+	                                            $class = "";
+	                                            $text = "";
+	                                            switch ($orcamento['COD_STATUS']) {
+	                                            	case 1:
+	                                            		$class = "badge badge-warning";
+	                                            		$text = "Pendente";
+	                                            		break;
+	                                            	case 2:
+	                                            		$class = "badge badge-success";
+	                                            		$text = "Enviado";
+	                                            		break;
+	                                            }
+                                            ?>
+                                            <span class="<?=$class?>"><?=$text?></span>
+                                        </td>
+                                        <td class="text-center">
+                                            <?=date('d/m/Y - H:i:s', strtotime($orcamento['DTA_SOLICITACAO']))?>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="item-action dropdown">
+                                                <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <span style="cursor:pointer;" onclick="ResponderOrcamento('<?=$orcamento['COD_ORCAMENTO']?>', '<?=$orcamento['DES_CLIENTE']?>', '<?=$orcamento['NOME_PRODUTO']?>', '<?=$orcamento['DES_EMAIL']?>')" class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i> Responder</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <?php 
+                                	} 
+                                ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-6" style="display:none;">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Estatística de Acesso</h4>
                             </div>
                             <table class="table card-table">
                                 <tr>
@@ -614,55 +263,10 @@
                             </table>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-4">
+                    <div class="col-md-6 col-lg-6" style="display:none;">
                         <div class="card">
                             <div class="card-header">
-                                <h2 class="card-title">Projects</h2>
-                            </div>
-                            <table class="table card-table">
-                                <tr>
-                                    <td>Admin Template</td>
-                                    <td class="text-right">
-                                        <span class="badge badge-default">65%</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Landing Page</td>
-                                    <td class="text-right">
-                                        <span class="badge badge-success">Finished</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Backend UI</td>
-                                    <td class="text-right">
-                                        <span class="badge badge-danger">Rejected</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Personal Blog</td>
-                                    <td class="text-right">
-                                        <span class="badge badge-default">40%</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>E-mail Templates</td>
-                                    <td class="text-right">
-                                        <span class="badge badge-default">13%</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Corporate Website</td>
-                                    <td class="text-right">
-                                        <span class="badge badge-warning">Pending</span>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">Members</h3>
+                                <h3 class="card-title">Usuários</h3>
                             </div>
                             <div class="card-body o-auto" style="height: 15rem">
                                 <ul class="list-unstyled list-separated">
@@ -820,316 +424,142 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-12">
-                        <div class="row">
-                            <div class="col-sm-6 col-lg-3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="card-value float-right text-blue">+5%</div>
-                                        <h3 class="mb-1">423</h3>
-                                        <div class="text-muted">Users online</div>
-                                    </div>
-                                    <div class="card-chart-bg">
-                                        <div id="chart-bg-users-1" style="height: 100%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="card-value float-right text-red">-3%</div>
-                                        <h3 class="mb-1">423</h3>
-                                        <div class="text-muted">Users online</div>
-                                    </div>
-                                    <div class="card-chart-bg">
-                                        <div id="chart-bg-users-2" style="height: 100%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="card-value float-right text-green">-3%</div>
-                                        <h3 class="mb-1">423</h3>
-                                        <div class="text-muted">Users online</div>
-                                    </div>
-                                    <div class="card-chart-bg">
-                                        <div id="chart-bg-users-3" style="height: 100%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="card-value float-right text-yellow">9%</div>
-                                        <h3 class="mb-1">423</h3>
-                                        <div class="text-muted">Users online</div>
-                                    </div>
-                                    <div class="card-chart-bg">
-                                        <div id="chart-bg-users-4" style="height: 100%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">Invoices</h3>
-                            </div>
-                            <div class="table-responsive">
-                                <table class="table card-table table-vcenter text-nowrap">
-                                    <thead>
-                                    <tr>
-                                        <th class="w-1">No.</th>
-                                        <th>Invoice Subject</th>
-                                        <th>Client</th>
-                                        <th>VAT No.</th>
-                                        <th>Created</th>
-                                        <th>Status</th>
-                                        <th>Price</th>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td><span class="text-muted">001401</span></td>
-                                        <td><a href="invoice.html" class="text-inherit">Design Works</a></td>
-                                        <td>
-                                            Carlson Limited
-                                        </td>
-                                        <td>
-                                            87956621
-                                        </td>
-                                        <td>
-                                            15 Dec 2017
-                                        </td>
-                                        <td>
-                                            <span class="status-icon bg-success"></span> Paid
-                                        </td>
-                                        <td>$887</td>
-                                        <td class="text-right">
-                                            <a href="javascript:void(0)" class="btn btn-secondary btn-sm">Manage</a>
-                                            <div class="dropdown">
-                                                <button class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown">Actions</button>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a class="icon" href="javascript:void(0)">
-                                                <i class="fe fe-edit"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="text-muted">001402</span></td>
-                                        <td><a href="invoice.html" class="text-inherit">UX Wireframes</a></td>
-                                        <td>
-                                            Adobe
-                                        </td>
-                                        <td>
-                                            87956421
-                                        </td>
-                                        <td>
-                                            12 Apr 2017
-                                        </td>
-                                        <td>
-                                            <span class="status-icon bg-warning"></span> Pending
-                                        </td>
-                                        <td>$1200</td>
-                                        <td class="text-right">
-                                            <a href="javascript:void(0)" class="btn btn-secondary btn-sm">Manage</a>
-                                            <div class="dropdown">
-                                                <button class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown">Actions</button>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a class="icon" href="javascript:void(0)">
-                                                <i class="fe fe-edit"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="text-muted">001403</span></td>
-                                        <td><a href="invoice.html" class="text-inherit">New Dashboard</a></td>
-                                        <td>
-                                            Bluewolf
-                                        </td>
-                                        <td>
-                                            87952621
-                                        </td>
-                                        <td>
-                                            23 Oct 2017
-                                        </td>
-                                        <td>
-                                            <span class="status-icon bg-warning"></span> Pending
-                                        </td>
-                                        <td>$534</td>
-                                        <td class="text-right">
-                                            <a href="javascript:void(0)" class="btn btn-secondary btn-sm">Manage</a>
-                                            <div class="dropdown">
-                                                <button class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown">Actions</button>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a class="icon" href="javascript:void(0)">
-                                                <i class="fe fe-edit"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="text-muted">001404</span></td>
-                                        <td><a href="invoice.html" class="text-inherit">Landing Page</a></td>
-                                        <td>
-                                            Salesforce
-                                        </td>
-                                        <td>
-                                            87953421
-                                        </td>
-                                        <td>
-                                            2 Sep 2017
-                                        </td>
-                                        <td>
-                                            <span class="status-icon bg-secondary"></span> Due in 2 Weeks
-                                        </td>
-                                        <td>$1500</td>
-                                        <td class="text-right">
-                                            <a href="javascript:void(0)" class="btn btn-secondary btn-sm">Manage</a>
-                                            <div class="dropdown">
-                                                <button class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown">Actions</button>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a class="icon" href="javascript:void(0)">
-                                                <i class="fe fe-edit"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="text-muted">001405</span></td>
-                                        <td><a href="invoice.html" class="text-inherit">Marketing Templates</a></td>
-                                        <td>
-                                            Printic
-                                        </td>
-                                        <td>
-                                            87956621
-                                        </td>
-                                        <td>
-                                            29 Jan 2018
-                                        </td>
-                                        <td>
-                                            <span class="status-icon bg-danger"></span> Paid Today
-                                        </td>
-                                        <td>$648</td>
-                                        <td class="text-right">
-                                            <a href="javascript:void(0)" class="btn btn-secondary btn-sm">Manage</a>
-                                            <div class="dropdown">
-                                                <button class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown">Actions</button>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a class="icon" href="javascript:void(0)">
-                                                <i class="fe fe-edit"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="text-muted">001406</span></td>
-                                        <td><a href="invoice.html" class="text-inherit">Sales Presentation</a></td>
-                                        <td>
-                                            Tabdaq
-                                        </td>
-                                        <td>
-                                            87956621
-                                        </td>
-                                        <td>
-                                            4 Feb 2018
-                                        </td>
-                                        <td>
-                                            <span class="status-icon bg-secondary"></span> Due in 3 Weeks
-                                        </td>
-                                        <td>$300</td>
-                                        <td class="text-right">
-                                            <a href="javascript:void(0)" class="btn btn-secondary btn-sm">Manage</a>
-                                            <div class="dropdown">
-                                                <button class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown">Actions</button>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a class="icon" href="javascript:void(0)">
-                                                <i class="fe fe-edit"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="row">
-                        <div class="col-6 col-md-3">
-                            <ul class="list-unstyled mb-0">
-                                <li><a href="#">First link</a></li>
-                                <li><a href="#">Second link</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <ul class="list-unstyled mb-0">
-                                <li><a href="#">Third link</a></li>
-                                <li><a href="#">Fourth link</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <ul class="list-unstyled mb-0">
-                                <li><a href="#">Fifth link</a></li>
-                                <li><a href="#">Sixth link</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <ul class="list-unstyled mb-0">
-                                <li><a href="#">Other link</a></li>
-                                <li><a href="#">Last link</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mt-4 mt-lg-0">
-                    Premium and Open Source dashboard template with responsive and high quality UI. For Free!
-                </div>
-            </div>
-        </div>
-    </div>
+
+
+
+
+
+
+
+    <!-- modal responder orcaçemto -->
+    <div id="modal-orcamento" class="modal fade" role="dialog">
+	    <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h4 class="modal-title">Solicitação de Orçamento</h4>
+		      </div>
+		      <div class="modal-body">
+		        <form action="/action_page.php">
+				  <div class="form-group">
+				    <label for="nomecli">Cliente:</label>
+				    <input type="text" readonly class="form-control" id="nome-cliente-orcamento">
+				  </div>
+				   <div class="form-group">
+				    <label for="nomecli">Produto:</label>
+				    <input type="text" readonly class="form-control" id="produto-orcamento">
+				  </div>
+
+				  <input type="hidden"  class="form-control" id="email-envio">
+				  <input type="hidden"  class="form-control" id="cod-orcamento">
+				  
+				  <div class="form-group">
+					  <label for="comment">Mensagem:</label>
+					  <textarea class="form-control" rows="5" id="mensagem-orcamento"></textarea>
+				  </div>
+				  <button type="button" class="btn btn-success btn-enviar-orcamento"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> &nbsp; Enviar</button>
+				</form>
+		      </div>
+		      <div class="modal-footer">
+		        	<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+		      </div>
+		    </div>
+	    </div>
+	</div>
+
+
     <footer class="footer">
         <div class="container">
             <div class="row align-items-center flex-row-reverse">
-                <div class="col-auto ml-lg-auto">
-                    <div class="row align-items-center">
-                        <div class="col-auto">
-                            <ul class="list-inline list-inline-dots mb-0">
-                                <li class="list-inline-item"><a href="./docs/index.html">Documentation</a></li>
-                                <li class="list-inline-item"><a href="./faq.html">FAQ</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-auto">
-                            <a href="https://github.com/tabler/tabler" class="btn btn-outline-primary btn-sm">Source code</a>
-                        </div>
-                    </div>
-                </div>
                 <div class="col-12 col-lg-auto mt-3 mt-lg-0 text-center">
-                    Copyright © 2018 <a href=".">Tabler</a>. Theme by <a href="https://codecalm.net" target="_blank">codecalm.net</a> All rights reserved.
+                    Copyright © <?=date("Y"); ?> <a href="https://www.upsy.com.br" target="_blank">Upsy Tecnologia - E-commerce</a> Todos os Direitos Reservados.
                 </div>
             </div>
         </div>
     </footer>
 </div>
 <?php include "inc/footer.php"; ?>
+<script> 
+
+$(function(){
+	BuscarOrcamentos();
+});
+
+$(document).on("click", ".btn-enviar-orcamento", function(){
+	if(ValidarOrcamento()){
+		$.ajax({
+			url: "<?=base_url()?>index.php/Dashboard/enviarOrcamento",
+			method: "POST",
+			data: { 
+				nome: $("#nome-cliente-orcamento").val(),
+				email: $("#email-envio").val(),
+				msg: $("#mensagem-orcamento").val(),
+				codigo: $("#cod-orcamento").val()
+			},
+			beforeSend: function(){
+
+			},
+			success: function(data){
+				console.log(data);
+			},
+			error: function(data){
+				console.log(data);
+			},
+			complete: function(){
+
+			}
+		});
+	}	
+});
+
+function ResponderOrcamento(codOrcamento,nomeCliente, nomeProduto, emailCliente){
+
+	$("#modal-orcamento").modal("show");
+	$("#cod-orcamento").val(codOrcamento);
+	$("#nome-cliente-orcamento").val(nomeCliente);
+	$("#produto-orcamento").val(nomeProduto);
+	$("#email-envio").val(emailCliente);
+
+	setTimeout(function(){
+		$("#mensagem-orcamento").focus();
+	});
+
+}
+
+function BuscarOrcamentos(){
+
+	$.ajax({
+		method: "",
+		url: "",
+		data:{},
+		success:function(){
+
+		},
+		error: function(){
+
+		},
+		complete: function(){
+			setTimeout(function(){
+				BuscarOrcamentos();
+			},30000);
+		}
+	});
+
+}
+
+function ValidarOrcamento(){
+	if($("#mensagem-orcamento").val() == ""){
+		alertas.AlertaErro("Atenção","Informe os dados referente ao orçamento!");
+		$("#mensagem-orcamento").focus();
+		return false;
+	}else{
+		return true;
+	}
+}
+
+</script>
 </body>
 </html>

@@ -7,12 +7,20 @@
     <?php $this->load->view('upadmin/inc/header');?>
     <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 </head>
+<style>
+/*CUSTOM PAGINA PRODUTO*/
+.panel-produto{
+    background: #fff;
+    padding:20px;
+    border:1px solid #dadada;
+}
+</style>
 <body>
 <div class="page">
     <div class="page-main">
 
         <?php $this->load->view('upadmin/layout/navbar.php');?>
-
+      	
         <div class="my-3 my-md-5">
             <div class="container">
                 <div class="my-3 mx-0">
@@ -30,7 +38,7 @@
                     <div class="col">
                         <input type="hidden" value="0" id="codigo-produto"/>
 
-                        <div class="row" style="padding:20px;border:1px solid #dadada;background:#f5f5f5;">
+                        <div class="row panel-produto">
                             <h3 class="text-primary w-100">Dados Gerais Produto:</h3>
                             <hr>
                             <div class="form-group col-md-12">
@@ -54,11 +62,11 @@
                                 <div id="descricao-produto" style="height: 300px"></div>
                             </div>
                             <hr />
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label>Modelo:</label>
                                 <input id="modelo-produto" placeholder="Ex: ESPORTIVO" class="form-control">
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label>Marca:</label>
                                 <select id="marca-produto" style="padding:6px 12px;" class="select2 form-control">
                                     <option selected value="0">Nenhum</option>
@@ -67,20 +75,28 @@
                                     <?php }	?>
                                 </select>
                             </div>
+                            <div class="form-group col-md-4">
+                                <label>Categorias:</label>
+                                <select id="categorias-produto" multiple style="padding:6px 12px;" class="select2 form-control">
+                                    <?php foreach ($categorias as $categoria) { ?>
+                                        <option value="<?=$categoria['COD_CATEGORIA'];?>"><?=$categoria['NOME_CATEGORIA'];?></option>
+                                    <?php }	?>
+                                </select>
+                            </div>
                             <hr>
                         </div>
                         <hr>
-                        <div class="row" style="padding:20px;border:1px solid #dadada;background:#f5f5f5;">
+                        <div class="row panel-produto">
                             <h3 class="text-primary w-100">Precificação do Produto:</h3>
                             <hr>
                             <div class="form-group col-md-6">
                                 <label>Preço:</label>
-                                <input id="preco-produto" onkeyup="somenteNumeros(this);" maxlength="20" placeholder="Ex: R$ 0,00" class="form-control">
+                                <input id="preco-produto" maxlength="20" placeholder="Ex: R$ 0,00" class="form-control">
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label>Preço Promocional:</label>
-                                <input id="promo-produto" onkeyup="somenteNumeros(this);" maxlength="20" placeholder="Ex: R$ 0,00" class="form-control">
+                                <input id="promo-produto" maxlength="20" placeholder="Ex: R$ 0,00" class="form-control">
                             </div>
 
                             <div class="form-group col-md-6">
@@ -109,7 +125,7 @@
                         </div>
 
                         <hr>
-                        <div class="row" style="padding:20px;border:1px solid #dadada;background:#f5f5f5;">
+                        <div class="row panel-produto">
                             <h3 class="text-primary w-100">Dimensões do Produto:</h3>
                             <hr>
                             <div class="form-group col-md-3 col-xs-12">
@@ -133,7 +149,7 @@
                         <hr>
 
 
-                        <div class="row" style="padding:20px;border:1px solid #dadada;background:#f5f5f5;">
+                        <div class="row panel-produto">
                             <h3 class="text-primary w-100">Fotos do Produto:</h3>
                             <h5 class="text-primary w-100">(limite de 8 fotos)</h5>
                             <hr>
@@ -146,7 +162,7 @@
                         </div>
                         <hr>
 
-                        <div class="row" style="padding:20px;border:1px solid #dadada;background:#f5f5f5;">
+                        <div class="row panel-produto">
                             <h3 class="text-primary w-100">Variações do Produto:</h3>
                             <hr>
                             <button class="btn btn-success">
@@ -155,7 +171,7 @@
                         </div>
                         <hr>
 
-                        <div class="row" style="padding:20px;border:1px solid #dadada;background:#f5f5f5;">
+                        <div class="row panel-produto">
                             <h3 class="text-primary w-100">Otimização de Busca SEO:</h3>
                             <hr>
                             <div class="form-group col-md-4 col-xs-12">
@@ -174,6 +190,21 @@
                                 <label>Description SEO:</label>
                                 <textarea maxlength="500" id="description-seo" style="resize: none;" class="form-control" rows="4"></textarea>
                             </div>
+
+                            <div class="form-group col-md-12 col-xs-12">
+                                <label>Ativo:</label>
+                                <input type="checkbox" id="produtoAtivo">
+                            </div>
+
+                             <div class="form-group col-md-12 col-xs-12">
+                                <label>Produto Arma:</label>
+                                <input type="checkbox" id="produtoArma">
+                            </div>
+
+                             <div class="form-group col-md-12 col-xs-12">
+                                <label>Produto Destaque:</label>
+                                <input type="checkbox" id="produtoDestaque">
+                            </div>
                             <hr>
                         </div>
                         <div class="text-center my-4">
@@ -186,6 +217,7 @@
 
     </div>
 </div>
+
 </body>
 
 	<script src="<?=base_url()?>assets/js/categorias/categoriasAdmin.js"></script>
@@ -205,27 +237,31 @@
             [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
             [{ 'align': [] }],
             ['clean']                                         // remove formatting button
-        ];
+        ,['code-block']];
+
+        var editorTexto = new Quill('#descricao-produto', {
+            theme: 'snow',
+            modules: {
+                toolbar: toolbarOptions
+            }
+        });
 
         const produto = new Produto();
+
+
+        Dropzone.autoDiscover = false;
         produto.ConfiguracoesDropZone();
+
         $(function(){
+
             produto.InicializaMascaras();
 
             //var myDropzone = new Dropzone("#fotos-produto", { url: "/file/post"});
 
-            var quill = new Quill('#descricao-produto', {
-                theme: 'snow',
-                modules: {
-                    toolbar: toolbarOptions
-                }
-            });
-
-
             $("#salvar-produto").on("click", function(){
-                if(produto.Validar()){
+                //if(produto.Validar()){
                     produto.Salvar();
-                }
+                //}
             });
         });
 
@@ -233,6 +269,8 @@
         function Produto(){
 
             var self = this;
+
+            self.ObjetoDropZone = undefined;
 
             self.Validar = function(){
 
@@ -301,46 +339,107 @@
 
             self.Salvar = function(){
 
+            	var formdata = new FormData();
+
+            	//adiciono um array de arquivos
+            	var totalArquivos = self.ObjetoDropZone.files.length;
+
+				for (var x = 0; x < totalArquivos; x++) {
+				    formdata.append("fotos[]", self.ObjetoDropZone.files[x]);
+				}
+
+            	formdata.append("modelo", JSON.stringify(self.MontarViewModel()));
+
                 $.ajax({
                     method: "POST",
-                    url: "<?=base_url()?>/index.php/produtosAdmin/testePagseguro",
-                    data: {},
+                    url: "<?=base_url()?>/index.php/produtosAdmin/salvarProduto",
+                    data: formdata,
+                    processData: false,
+        			contentType: false,
                     success: function(data){
-                        console.log(data);
+                    	if(data.sucesso){
+                    		alertas.AlertaSucesso("Ok","Dados salvos com sucesso!");
+
+                    		setTimeout(function(){
+                    			window.location.href='<?=base_url()?>/index.php/produtosAdmin/index';
+                    		},1800);
+                    	}
                     },
                     error: function(data){
-                        console.log(data);
+                        alertas.AlertaErro("Atenção",data.error);
                     },
                     complete: function(){
-
+                        
                     }
                 });
             }
 
-
-
             self.MontarViewModel = function(){
-                let objeto = {
 
+                //TODO: Acrescentar no banco SKU 
+                let objeto = {
+                    codigoProduto: $("#codigo-produto").val(),
+                    nomeProduto: $("#nome-produto").val(),
+                    eanProduto: $("#ean-produto").val(),
+                    ncmProduto: $("#ncm-produto").val(),
+                    estoqueProduto: $("#estoque-produto").val(),
+                    descricaoProduto: JSON.stringify(editorTexto.getContents()), //editorTexto.container.innerText,
+                    modelProduto: $("#modelo-produto").val(),
+                    marcaProduto: $("#marca-produto").val(),
+                    categorias: $("#categorias-produto").val(),
+                    //precificacao do produto
+                    precoProduto: $("#preco-produto").val(),
+                    promoProduto: $("#promo-produto").val(),
+                    dtaInicialPromo: $("#dtaInicialPromo-produto").val(),
+                    dtaFinalProdmo: $("#dtaFinalPromo-produto").val(),
+
+                    //dimensoes do produto
+                    pesoProduto: $("#peso-produto").val(),
+                    comprimentoProduto: $("#comprimento-produto").val(),
+                    larguraProduto: $("#largura-produto").val(),
+                    alturaProduto: $("#altura-produto").val(),
+
+
+                    //fotos do produto
+                    fotosProduto: self.ObjetoDropZone.files,
+
+                    //SEO do produto
+                    tituloSeo: $("#title-seo").val(),
+                    keyWordsSeo: $("#keyword-seo").val(),
+                    urlAmigavelProduto: $("#urlAmigavel-produto").val(),
+                    descriptionSeo: $("#description-seo").val(),
+
+                    tipAtivo: $("#produtoAtivo").is(":checked") ? true : false,
+                    tipArma: $("#produtoArma").is(":checked") ? true : false,
+                    tipDestaque: $("#produtoDestaque").is(":checked") ? true : false
                 }
-                return;
+                return objeto;
             }
 
             self.ConfiguracoesDropZone = function(){
-                Dropzone.options.fotosProduto = {
-                    url: "<?=base_url()?>/produtosAdmin/uploadImagens",
-                    addRemoveLinks: true,
-                    maxFiles: 8,
-                    autoProcessQueue: false,
-                    acceptedFiles: '.png,.jpg',
-                    dictDefaultMessage: "Faça upload das imagens do produto!",
-                    dictRemoveFile: "Remover Arquivo!",
-                    init: function() {
-                        this.on("maxfilesexceeded", function(file){
-                            this.removeFile(file);
-                        });
-                    }
-                };
+
+                let config = undefined;
+
+                self.ObjetoDropZone =  new Dropzone("#fotosProduto", 
+                	{ 
+                		url: "<?=base_url()?>/produtosAdmin/uploadImagens",
+                		addRemoveLinks: true,
+                    	maxFiles: 8,
+                    	autoProcessQueue: false,
+                    	acceptedFiles: '.png,.jpg',
+                    	dictDefaultMessage: "Faça upload das imagens do produto!",
+                    	dictRemoveFile: "Remover Arquivo!",
+                    	init: function() {
+	                        this.on("maxfilesexceeded", function(file){
+	                            this.removeFile(file);
+	                        }),
+	                        
+	                        this.on("addedfile", function(file) { 
+	                        	
+	                        });
+                    	}
+                	}
+                );
             }
 
             self.InicializaMascaras = function(){
@@ -348,7 +447,7 @@
                 $("#peso-produto").mask("#.##0,000", {reverse: true});
                 $("#comprimento-produto, #largura-produto, #comprimento-produto").mask("00000000000");
             }
-	}
+	   }
 
         function somenteNumeros(num) {
             var er = /[^0-9.]/;

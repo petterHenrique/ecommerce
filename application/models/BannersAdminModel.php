@@ -22,9 +22,9 @@ class BannersAdminModel extends CI_Model {
         return $dados;
     }
 
-    public function buscarPaginaPorId($id){
-		$this->db->where("COD_PAGINA", $id);
-    	$dados = $this->db->get('paginas')->result_array();
+    public function buscarBanerPorId($id){
+		$this->db->where("COD_BANER", $id);
+    	$dados = $this->db->get('banner')->result_array();
         if($dados){
         	return $dados;
         }else{

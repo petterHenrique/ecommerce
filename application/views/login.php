@@ -55,7 +55,7 @@
                                 </div>
                             </div>
                         </div>
-                        <em class="text-muted">ou logar-se com:</em>
+                        <!--em class="text-muted">ou logar-se com:</em>
                         <div class="flex-container-center mt-1">
                             <div class="social-media facebook">
                                 <span class="fab fa-facebook"></span>
@@ -69,14 +69,14 @@
                             <div class="social-media microsoft">
                                 <span class="fab fa-microsoft"></span>
                             </div>
-                        </div>
+                        </div-->
 
                         <button class="btn-login my-3 btn-block btn-logar">
                             ENTRAR
                         </button>
                         <span class="text-muted">
-                            Não possuí uma conta? Clique
-                            <a href="#" id="linkCriarConta">aqui</a> para criar
+                            Esqueceu sua senha? Clique
+                            <a href="#" id="linkCriarConta">aqui</a> receber por e-mail
                         </span>
                     </div>
                 </div>

@@ -37,7 +37,8 @@
 	    	weekStart: 0,
 	    	startDate:'0d',
 	    	autoclose: true,
-	    	todayHighlight: true
+	    	todayHighlight: true,
+	    	forceParse: false
 		});
     });
     </script>

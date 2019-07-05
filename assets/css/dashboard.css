@@ -16588,6 +16588,10 @@ a.tag-addon:hover {
   border-radius: 2px;
 }
 
+.payment-boleto{
+	background-image: url("../images/payments/boleto.svg");
+}
+
 .payment-2checkout-dark {
   background-image: url("../images/payments/2checkout-dark.svg");
 }
@@ -16995,7 +16999,9 @@ a.tag-addon:hover {
 .payment-visa {
   background-image: url("../images/payments/visa.svg");
 }
-
+.payment-boleto2 {
+  background-image: url("../images/payments/boleto.svg");
+}
 .payment-webmoney-dark {
   background-image: url("../images/payments/webmoney-dark.svg");
 }

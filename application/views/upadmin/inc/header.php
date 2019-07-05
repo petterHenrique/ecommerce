@@ -36,8 +36,12 @@
 	    .drop-notificacao: hover{
 	    	background: none;
 	    }
+	    .breadcrumb{
+	    	padding:10px!important;
+	    }
     </style>
     <script> 
         var site_url = "<?=base_url()?>",
             segments = ('').split('/');
     </script>
+

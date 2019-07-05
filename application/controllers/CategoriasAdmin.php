@@ -88,15 +88,15 @@ class CategoriasAdmin extends MasterLogado {
 				'KEYWORD_SEO' => $dados['keywordsSeo'], 
 				'DESCRIPTION_SEO' => $dados['descriptionSeo'], 
 				'TITLE_SEO' => $dados['titleSeo'], 
-				'TIP_ATIVO' => $dados['ativo'], 
-				'FOTO_CATEGORIA' => $dados['foto'], 
+				'TIP_ATIVO' => (bool)$dados['ativo'], 
+				'FOTO_CATEGORIA' => null, 
 			);
 
 			//verifica se é edição ou cadastro
 			$salvar = array();
 
 			if($dados['codigoCategoria'] != "0"){
-$salvar = $this->CategoriasAdminModel->editar($categoria, $dados['codigoCategoria']);
+				$salvar = $this->CategoriasAdminModel->editar($categoria, $dados['codigoCategoria']);
 
 			}else{
 				$salvar = $this->CategoriasAdminModel->salvar($categoria);

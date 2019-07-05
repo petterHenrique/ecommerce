@@ -37,9 +37,9 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <a href="/index.php/categoriasAdmin/criar" class="btn btn-default my-4">
-                            <i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp; Adicionar
-                        </a>
+                    	</br>
+                    	<button class="btn btn-default pull-right" onclick="window.location.href='<?=base_url()?>index.php/categoriasAdmin/criar'"><i class="fa fa-plus-circle" aria-hidden="true"></i> Adicionar</button>
+
                         <table class="table table-striped">
                             <thead>
                             <tr>

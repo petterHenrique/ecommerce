@@ -48,20 +48,22 @@ function Categorias(){
 				data:{ categoria: self.MontarViewModel()},
 				dataType: "json",
 				beforeSend: function(){
-					loading();
+					//loading();
+					$("#salvar-categoria").attr("disabled", true);
 				},
 				success: function(data){
 					alertas.AlertaSucesso("Sucesso!",data.success);
 					setTimeout(function(){
 						window.location.href = site_url+"index.php/categoriasAdmin/index";
-					},1800);
+					},400);
 				},
 				error: function(data){
 					console.log(data);
 					alertas.AlertaErro("Atenção", data.responseJSON.error);
 				},
 				complete: function(data){
-					loaded();
+					//loaded();
+					
 				}
 			});
 		}

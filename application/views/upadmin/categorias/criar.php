@@ -5,6 +5,12 @@
 <html lang="pt-br">
 <head>
     <?php $this->load->view('upadmin/inc/header');?>
+
+    <style>
+    .some{
+    	display:none;
+    }
+    </style>
 </head>
 <body>
 
@@ -52,40 +58,35 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <div class="row">
-                            <div class="form-group col-md-4 col-xs-12">
-                                <label>Title SEO:</label>
-                                <input maxlength="250" id="title-seo" placeholder="Ex: NOME DO PRODUTO" class="form-control">
-                            </div>
-
-                            <div class="form-group col-md-4 col-xs-12">
-                                <label>Keywords SEO:</label>
-                                <input id="keyword-seo" placeholder="Ex: PALAVRAS CHAVE SEPARADO POR VÍRGULA" class="form-control">
-                            </div>
-                            <div class="form-group col-md-4 col-xs-12">
-                                <label>Url Amigavel:</label>
-                                <input id="url-amigavel"  placeholder="Ex: tenis-nike-stefan-janoski SEPARADO POR ' - '" class="form-control">
-                            </div>
+                        <div class="form-group">
+                            <label>Title SEO:</label>
+                            <input maxlength="250" id="title-seo" placeholder="Ex: NOME DA CATEGORIA" class="form-control">
                         </div>
-                        <div class="form-group col-md-12 col-xs-12">
+                        <div class="form-group">
+                            <label>Keywords SEO:</label>
+                            <input id="keyword-seo" placeholder="Ex: PALAVRAS CHAVE SEPARADO POR VÍRGULA" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Url Amigavel:</label>
+                            <input id="url-amigavel"  placeholder="Ex: categoria-teste SEPARADO POR ' - '" class="form-control">
+                        </div>
+                        <div class="form-group">
                             <label>Description SEO:</label>
                             <textarea maxlength="500" id="description-seo" style="resize: none;" class="form-control" rows="4"></textarea>
                         </div>
-
                         <div class="form-group">
                             <div class="checkbox">
                                 <label><input id="ativo" checked type="checkbox" value="">Ativo</label>
                             </div>
                         </div>
-
-                        <div class="form-group">
+                        <!--div class="form-group">
                             <label class="btn btn-primary btn-file">
                                 <i class="fa fa-picture-o" aria-hidden="true"></i> Carregar Foto <input id="foto" type="file" hidden>
                             </label>
                             <hr>
-                            <img style="width:250px;height:250px;" src="" id="foto-categoria" />
+                            <img class="some" style="width:250px;height:250px;" src="" id="foto-categoria" />
                         </div>
-                        <hr>
+                        <hr-->
                         <div class="text-center">
                             <button id="salvar-categoria" class="btn btn-success"><span class="fa fa-floppy-o"></span> Salvar Categoria</button>
                         </div>
@@ -106,7 +107,7 @@
 		$("#foto-categoria").addClass("hidden");
 		$("#foto").change(function() {
 			LerImagem(this);
-			$("#foto-categoria").removeClass("hidden");
+			$("#foto-categoria").removeClass("some");
 		});
 
 		$("#salvar-categoria").on("click", function(){

@@ -1,7 +1,7 @@
 <div class="header py-4">
     <div class="container">
         <div class="d-flex">
-            <a class="header-brand" href="./index.html">
+            <a class="header-brand" href="<?=base_url()?>index.php/Dashboard/index">
                 <img src="<?=base_url()?>assets/images/logo-admin.png" class="header-brand-img" alt="tabler logo">
             </a>
             <div class="d-flex order-lg-2 ml-auto">
@@ -40,30 +40,22 @@
                     <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
                         <span class="avatar" style="background-image: url(./demo/faces/female/25.jpg)"></span>
                         <span class="ml-2 d-none d-lg-block">
-                      <span class="text-default">Jane Pearson</span>
-                      <small class="text-muted d-block mt-1">Administrator</small>
+                      <span class="text-default"><?=$_SESSION['nomeUsuario'];?></span>
+                      <small class="text-muted d-block mt-1"><?=$_SESSION['emailUsuario'];?></small>
                     </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                         <a class="dropdown-item" href="#">
-                            <i class="dropdown-icon fe fe-user"></i> Profile
+                            <i class="dropdown-icon fe fe-user"></i> Perfil
                         </a>
                         <a class="dropdown-item" href="#">
-                            <i class="dropdown-icon fe fe-settings"></i> Settings
+                            <i class="dropdown-icon fe fe-settings"></i> Configurações
                         </a>
                         <a class="dropdown-item" href="#">
-                            <span class="float-right"><span class="badge badge-primary">6</span></span>
-                            <i class="dropdown-icon fe fe-mail"></i> Inbox
+                            <i class="dropdown-icon fe fe-help-circle"></i> Suporte Técnico
                         </a>
-                        <a class="dropdown-item" href="#">
-                            <i class="dropdown-icon fe fe-send"></i> Message
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">
-                            <i class="dropdown-icon fe fe-help-circle"></i> Need help?
-                        </a>
-                        <a class="dropdown-item" href="#">
-                            <i class="dropdown-icon fe fe-log-out"></i> Sign out
+                        <a class="dropdown-item" href="<?=base_url()?>/index.php/login/deslogar">
+                            <i class="dropdown-icon fe fe-log-out"></i> Sair
                         </a>
                     </div>
                 </div>
@@ -80,7 +72,7 @@
             <div class="col-lg order-lg-first">
                 <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
                     <li class="nav-item">
-                        <a href="./index.html" class="nav-link active"><i class="fe fe-home"></i> Home</a>
+                        <a href="<?=base_url()?>index.php/Dashboard/index" class="nav-link active"><i class="fe fe-home"></i> Home</a>
                     </li>
                     <li class="nav-item">
                         <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown">
@@ -88,19 +80,19 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-arrow">
                             <a href="<?=base_url()?>index.php/categoriasAdmin/index" class="dropdown-item">Categorias</a>
-                            <a href="<?=base_url()?>index.php/marcasAdmin/index" class="dropdown-item">Marcas</a>
                             <a href="<?=base_url()?>index.php/produtosAdmin/index" class="dropdown-item">Produtos</a>
+                            <!--a href="<?=base_url()?>index.php/marcasAdmin/index" class="dropdown-item">Marcas</a>
                             <a href="<?=base_url()?>index.php/produtosAdmin/index" class="dropdown-item">Atributos</a>
-                            <a href="<?=base_url()?>index.php/produtosAdmin/index" class="dropdown-item">Variações</a>
+                            <a href="<?=base_url()?>index.php/produtosAdmin/index" class="dropdown-item">Variações</a-->
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link" data-toggle="dropdown">
+                        <a href="<?=base_url()?>index.php/pedidosAdmin/index" class="nav-link">
                             <i class="fe fe-shopping-cart"></i> Pedidos
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link" data-toggle="dropdown">
+                        <a href="<?=base_url()?>index.php/clientesAdmin/index" class="nav-link">
                             <i class="fe fe-users"></i> Clientes
                         </a>
                     </li>
@@ -109,10 +101,11 @@
                             <i class="fe fe-zap"></i> Marketplace
                         </a>
                         <div class="dropdown-menu dropdown-menu-arrow">
-                            <a href="<?=base_url()?>index.php/bannersadmin/index" class="dropdown-item">B2W</a>
-                            <a href="<?=base_url()?>index.php/bannersadmin/index" class="dropdown-item">Mercado Livre</a>
+                        	<a href="<?=base_url()?>index.php/bannersAdmin/index" class="dropdown-item">Mercado Livre</a>
+                            <!--a href="<?=base_url()?>index.php/bannersadmin/index" class="dropdown-item">B2W</a>
+                            
                             <a href="<?=base_url()?>index.php/bannersadmin/index" class="dropdown-item">Walmart</a>
-                            <a href="<?=base_url()?>index.php/bannersadmin/index" class="dropdown-item">Daffiti</a>
+                            <a href="<?=base_url()?>index.php/bannersadmin/index" class="dropdown-item">Daffiti</a-->
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -125,13 +118,13 @@
                             <i class="fe fe-share-2"></i> Marketing
                         </a>
                         <div class="dropdown-menu dropdown-menu-arrow">
-                            <a href="<?=base_url()?>index.php/bannersadmin/index" class="dropdown-item">Banners</a>
+                            <a href="<?=base_url()?>index.php/bannersadmin/index" class="dropdown-item">Baners</a>
                             <a href="<?=base_url()?>index.php/bannersadmin/index" class="dropdown-item">Cupons</a>
                             <a href="<?=base_url()?>index.php/bannersadmin/index" class="dropdown-item">Newsletter</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="./form-elements.html" class="nav-link">
+                        <a href="<?=base_url()?>index.php/paginasadmin/index" class="nav-link">
                             <i class="fe fe-file"></i> Páginas
                         </a>
                     </li>
@@ -140,8 +133,8 @@
                             <i class="fe fe-settings"></i> Configurações
                         </a>
                         <div class="dropdown-menu dropdown-menu-arrow">
-                            <a href="<?=base_url()?>index.php/bannersadmin/index" class="dropdown-item">Dados Empresa</a>
-                            <a href="<?=base_url()?>index.php/bannersadmin/index" class="dropdown-item">Frete</a>
+                            <a href="<?=base_url()?>index.php/dadosEmpresaAdmin/index" class="dropdown-item">Dados Empresa</a>
+                            <a href="<?=base_url()?>index.php/FreteAdmin/index" class="dropdown-item">Frete</a>
                             <a href="<?=base_url()?>index.php/bannersadmin/index" class="dropdown-item">Pagamentos</a>
                         </div>
                     </li>

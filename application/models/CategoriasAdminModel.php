@@ -15,9 +15,46 @@ class CategoriasAdminModel extends CI_Model {
         return $dados;
     }
 
+    public function buscarCategoriasAtivasMenu(){
+    	$this->db->where("TIP_ATIVO", true);
+    	$dados = $this->db->get('categorias')->result_array();
+    	return $dados;
+    }
+
+    /*
+     *
+		Passa por parametro url amigavel e te retorna o nome correto da categori
+	 *
+     */
+    public function buscarNomeCategoriaUrlAmigavel($url){
+    	$this->db->where("URL_AMIGAVEL_CATEGORIA", $url);
+    	$dados = $this->db->get('categorias')->result_array();
+    	return $dados;
+    }
+
+    public function buscarCategoriasAtivasMenuFilhas($codigo){
+    	$this->db->where("TIP_ATIVO", true);
+    	$this->db->where("COD_PAI_CATEGORIA", $codigo);
+    	$dados = $this->db->get('categorias')->result_array();
+    	return $dados;
+    }
+
+
+    public function salvarCategoriaProduto($dados){
+		
+		$this->db->insert('produtos_categorias', $dados);
+    }
+
+	public function buscarCategoriasAtivasMenuPai(){
+    	$this->db->where("TIP_ATIVO", true);
+    	$this->db->where("COD_PAI_CATEGORIA", 0);
+    	$dados = $this->db->get('categorias')->result_array();
+    	return $dados;
+    }
+
     public function buscarTodasCategorias()
     {
-    	$this->db->where("TIP_ATIVO", true);
+    	//$this->db->where("TIP_ATIVO", true);
     	$dados = $this->db->get('categorias')->result_array();
         return $dados;
     }

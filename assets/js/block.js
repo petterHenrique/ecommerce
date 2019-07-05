@@ -1,7 +1,11 @@
 //desenvolvido e projetado na mão sem uso de Wix ou qualquer outro software pronto.
 //FSG empreendedorismo
 
-function loading(){
+function loading(msg){
+
+	//remove do corpo e depois abaixo joga novamente
+	$(document).find("#spinner").remove();
+
 	$.blockUI.defaults = { 
 	    css: { 
 	        padding:        0, 
@@ -55,8 +59,30 @@ function loading(){
 	    blockMsgClass: 'blockMsg', 
 	    ignoreIfBlocked: false 
 	}; 
+
+	$(document.body).append(objHTML);
+
+	if(msg != "" && msg != null)
+	{
+		$(document).find("#spinner").find('.titulo-msg').text(msg);
+	}else{
+		$(document).find("#spinner").find('.titulo-msg').remove();
+	}
+
 	$.blockUI({message: $('#spinner')}); 
 }
 function loaded(){
 	$.unblockUI();
 }
+
+let objHTML =  '<div id="spinner" style="display:none;">';
+	objHTML += '</br>';
+	objHTML += '<h4 style="font-size:18px;" class="titulo-msg"></h4>';
+	objHTML += '</br>';
+	objHTML += '<i class="fas fa-spinner fa-lg fa-spin fa-lgshutdown -s -t 10"></i>';
+	objHTML += '</br>';
+	objHTML += '</br>';
+	objHTML += '</div>';
+
+		
+	

@@ -15,10 +15,26 @@ class PaginasAdminModel extends CI_Model {
         return $dados;
     }
 
-    public function buscarTodasCategorias()
-    {
+
+    public function buscarPaginaPorUrlAmigavel($url){
+
+    	$this->db->where("URL_AMIGAVEL", $url);
+    	$dados = $this->db->get('paginas')->row();
+        return $dados;
+
+    }
+
+  
+    public function buscarTodasPaginasAtivas()
+    {	
     	$this->db->where("TIP_ATIVO", true);
-    	$dados = $this->db->get('categorias')->result_array();
+    	$dados = $this->db->get('paginas')->result_array();
+        return $dados;
+    }
+
+    public function buscarTodasPaginas()
+    {	
+    	$dados = $this->db->get('paginas')->result_array();
         return $dados;
     }
 

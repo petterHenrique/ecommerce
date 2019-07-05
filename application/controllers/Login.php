@@ -10,17 +10,30 @@ class Login extends CI_Controller {
 	}
 
 	public function teste(){
-		$jsonArray = file_get_contents('php://input');
-		$this->output
-		        	->set_status_header(200)
-					->set_content_type('application/json')
-        			->set_output($jsonArray);
+		
+		$modelLogin = $this->load->model("LoginModel");
+
+		
+
+		echo $dado->tipAtivo;
 	}
+
 
 	public function logar(){
 		try{
 
 			$modelLogin = $this->load->model("LoginModel");
+
+
+			//verifico se o cliente ta ativo
+
+			//$clienteUpsy = $this->LoginModel->verificarClienteAtivo();
+			$clienteUpsyAtivo = true;//(boolean)$clienteUpsy->tipAtivo;
+
+			if($clienteUpsyAtivo == false){
+				throw new Exception("Usuário inativo, parcelas e valores pendentes, entrar em contato com pedro@upsy.com.br", 1);
+			}
+
 
 			$email = $this->input->post("email", true);
 			$senha = $this->input->post("senha", true);
@@ -36,6 +49,14 @@ class Login extends CI_Controller {
 		            'logado' => TRUE
 		        );
 		        $this->session->set_userdata($dadosSessaoUsuario);
+
+
+		        //aqui eu gravo o cliente e a sessao
+		        $sessionId = session_id();
+
+		        
+		        $this->LoginModel->salvarSessaoUpsy(1, $sessionId);
+
 		        $this->output
 		        	->set_status_header(200)
 					->set_content_type('application/json')
@@ -47,7 +68,10 @@ class Login extends CI_Controller {
         			->set_output(json_encode("Usuário ou senha inválidos!"));
 			}
 		}catch(Exception $e){
-			echo var_dump($e->getMessage());
+			$this->output
+					->set_status_header(400)
+					->set_content_type('application/json')
+        			->set_output(json_encode($e->getMessage()));
 		}
 	}
 
@@ -61,6 +85,7 @@ class Login extends CI_Controller {
 			);
 
 		$this->session->sess_destroy();
-		redirect('login/index');
+		header("Location: /upsycommerce/index.php/login");
+		//redirect('/login/index');
 	}
 }
