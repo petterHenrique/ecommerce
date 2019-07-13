@@ -132,6 +132,56 @@
   	.f11{
   		font-size: 11px;
   	}
+	
+	/*mobile*/
+	
+	/* 
+	  ##Device = Tablets, Ipads (portrait)
+	  ##Screen = B/w 768px to 1024px
+	*/
+
+	@media (min-width: 768px) and (max-width: 1024px) {
+	  
+	  //CSS
+	  
+	}
+
+	/* 
+	  ##Device = Tablets, Ipads (landscape)
+	  ##Screen = B/w 768px to 1024px
+	*/
+
+	@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+	  
+	  //CSS
+	  
+	}
+
+	/* 
+	  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+	  ##Screen = B/w 481px to 767px
+	*/
+
+	@media (min-width: 481px) and (max-width: 767px) {
+	  
+		.panel-mobile-padding-top{
+			margin-top:20px;
+		}
+	  
+	}
+
+	/* 
+	  ##Device = Most of the Smartphones Mobiles (Portrait)
+	  ##Screen = B/w 320px to 479px
+	*/
+
+	@media (min-width: 320px) and (max-width: 480px) {
+	  
+		.panel-mobile-padding-top{
+			margin-top:20px;
+		}
+	  
+	}
   </style>
 </head>
 <body style="background:#f5f5f5;">
@@ -252,7 +302,7 @@
 				</div>
 
 				<!--aqui vai o endereço-->
-
+				</br>
 				<?php if(isset($_SESSION['clienteLogado'])) {?>
 				<div class="panel">
 
@@ -265,13 +315,23 @@
 						<p class="f11"> 
 							Selecione uma forma de entrega.
 						</p>
+
+						<p> 
+						<?php $enderecoCliente = $_SESSION['enderecoCliente'];?>
+						<p style="border:1px solid #ccc;border-radius:5px;padding:8px;font-size:14px;">
+							<?=$enderecoCliente['LOGRADOURO_ENDERECO']?>, <?=$enderecoCliente['NUMERO_ENDERECO']?>, <?=$enderecoCliente['ESTADO_ENDERECO']?></br><?=$enderecoCliente['CIDADE_ENDERECO']?>, <?=$enderecoCliente["CEP_ENDERECO"]?>
+						</p>
+
+						<div style="cursor:pointer;margin-top:-60px;margin-right:5px;" class="float-right" editarEnderecoEntrega>
+							<i class="far fa-edit text-primary"></i>
+						</div>
 					</div>
 
 					<hr>
 					<ul class="list-group frete">
 					<?php foreach($_SESSION['fretePedido'] as $frete){?>
 					  	<li class="list-group-item frete-item" data-tipo="<?=$frete['SERVICO'];?>" data-valor="<?=$frete['VALOR'];?>"><strong><?=$frete['SERVICO'];?></strong> <span><?=$frete['VALOR'];?></span> 
-					  		<a class="btn-frete" href="javascript:void(0);">Selecionar</a>
+					  		<a class="badge badge-primary btn-frete" href="javascript:void(0);">Selecionar</a>
 					  	</li>
 					<?php 
 						}
@@ -331,10 +391,22 @@
 				</div>
 				<?php } ?>
 			</div>
-
+			
 			<div class="col-md-4"> 
-				<?php if(isset($_SESSION['enderecoCliente'])) {?>
-				<div class="panel">
+			
+				<?php if(!isset($_SESSION['enderecoCliente'])) {?>
+					
+				<div class="panel panel-mobile-padding-top" style="opacity:0.6;">
+					<div class="box-title">
+						<h5 class="title-header-box">Forma de Pagamento</h5>
+						<p class="f11"> 
+							Selecione uma das opções que deseja realizar o pagamento do pedido!
+						</p>
+					</div>
+				</div>
+				
+				<?php } else { ?>
+				<div class="panel panel-mobile-padding-top">
 					<div class="box-title">
 						<h5 class="title-header-box">Forma de Pagamento</h5>
 						<p class="f11"> 
@@ -378,7 +450,7 @@
 			</div>
 
 			<div class="col-md-4"> 
-				<div class="panel">
+				<div class="panel panel-mobile-padding-top">
 					<div class="box-title">
 						<h5 class="title-header-box">Resumo da Compra</h5>
 						<p class="f11"> 
@@ -414,9 +486,17 @@
 					</table>
 					<input type="hidden" id="total-amount" value="<?=$total;?>"/>
 					<hr>
+					
+					<?php
+						if(isset($_SESSION['clienteLogado']) && isset($_SESSION['enderecoCliente'])){
+					?>
 					<div class="form-group w-100">
 						<button class="btn btn-default" id="finalizar-pedido" style="background:#33a86f;color:#fff;width:100%;">Finalizar Pedido</button>
 					</div>
+					<?php
+						}
+					?>
+					
 				</div>
 			</div>
 
@@ -444,6 +524,67 @@
 	</div>
 <?php //echo json_encode($_SESSION) ?>
 
+
+
+	<div id="editarEnderecoEntrega" class="modal" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title">Editar Endereço Entrega</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body" id="contextoEnderecoEntregaEdicao">
+	        	
+	      		<?php
+				
+	      		$enderecoClienteEdicao = isset($_SESSION['enderecoCliente']) ? $_SESSION['enderecoCliente'] : "";
+
+	      		?>
+
+		  		<div class="form-group w-100">
+						<label class="text-label">CEP:</label>
+						<input autofocus="true" class="input-checkout" autofocus="true" placeholder="00000-000" type="tel" id="cepCliente" value="<?=$enderecoClienteEdicao['CEP_ENDERECO'];?>">
+					</div>
+					<div class="form-group w-100">
+						<label class="text-label">Endereço:</label>
+						<input class="input-checkout" placeholder="Endereço" type="text" id="enderecoCliente" value="<?=$enderecoClienteEdicao['LOGRADOURO_ENDERECO'];?>">
+					</div>
+					<div> 
+						<div class="form-group form-group-50" style="padding-right:5px;">
+							<label class="text-label">Cidade:</label>
+							<input class="input-checkout" placeholder="Cidade" type="text" id="cidadeCliente" value="<?=isset($enderecoClienteEdicao['CIDADE_ENDERECO']) ? $enderecoClienteEdicao['CIDADE_ENDERECO'] : "";?>">
+						</div>
+						<div class="form-group form-group-50" style="padding-left:5px;">
+							<label class="text-label">UF:</label>
+							<input class="input-checkout" type="text" placeholder="Estado" id="ufCliente" value="<?=isset($enderecoClienteEdicao['ESTADO_ENDERECO']) ? $enderecoClienteEdicao['ESTADO_ENDERECO'] : "";?>">
+						</div>
+					</div>
+					<div> 
+						<div class="form-group form-group-50" style="padding-right:5px;">
+							<label class="text-label">Número:</label>
+							<input class="input-checkout" placeholder="Número" type="text" id="numeroEnderecoCliente" value="<?=isset($enderecoClienteEdicao['NUMERO_ENDERECO']) ? $enderecoClienteEdicao['NUMERO_ENDERECO'] : "";?>">
+						</div>
+						<div class="form-group form-group-50" style="padding-left:5px;">
+							<label class="text-label">Referência:</label>
+							<input class="input-checkout" type="text" placeholder="Ex: av. lisboa" id="referenciaEnderecoCliente" value="<?=isset($enderecoClienteEdicao['COMPLEMENTO_ENDERECO']) ? $enderecoClienteEdicao['COMPLEMENTO_ENDERECO'] : "";?>">
+						</div>
+					</div>
+					<div class="form-group w-100">
+						<label class="text-label">Bairro:</label>
+						<input class="input-checkout" placeholder="Endereço" type="text" id="bairroEnderecoCliente" value="<?=isset($enderecoClienteEdicao['BAIRRO_ENDERECO']) ? $enderecoClienteEdicao['BAIRRO_ENDERECO'] : "";?>">
+					</div>
+					
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-primary" id="editarCliente">Salvar</button>
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
 	<div id="editarClienteModal" class="modal" tabindex="-1" role="dialog">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
@@ -456,26 +597,26 @@
 	      <div class="modal-body" id="contextoClienteEdicao">
 	        	<div class="form-group w-100">
 					<label class="text-label">Nome Completo:</label>
-					<input class="input-checkout" autofocus="true" placeholder="Nome Completo" type="text" id="nomeCliente" value="<?=$dadosCliente->nome;?>">
+					<input class="input-checkout" autofocus="true" placeholder="Nome Completo" type="text" id="nomeCliente" value="<?=isset($dadosCliente->nome) ? $dadosCliente->nome : "";?>">
 				</div>
 				<div class="form-group w-100">
 					<label class="text-label">E-mail:</label>
-					<input class="input-checkout" placeholder="Melhor E-mail" value="<?=$dadosCliente->email;?>" type="text" id="emailCliente">
+					<input class="input-checkout" placeholder="Melhor E-mail" value="<?=isset($dadosCliente->email) ? $dadosCliente->email : "";?>" type="text" id="emailCliente">
 				</div>
 				<div> 
 					<div class="form-group form-group-50" style="padding-right:5px;">
 						<label class="text-label">Cpf:</label>
 						<input class="input-checkout" placeholder="000.000.000-00" type="text" id="cpfCliente"
-						value="<?=$dadosCliente->cpf;?>">
+						value="<?=isset($dadosCliente->cpf) ? $dadosCliente->cpf : "";?>">
 					</div>
 					<div class="form-group form-group-50" style="padding-left:5px;">
 						<label class="text-label">Telefone:</label>
-						<input class="input-checkout" type="text" placeholder="(00) 00000-0000" id="telefoneCliente" value="<?=$dadosCliente->telefone;?>">
+						<input class="input-checkout" type="text" placeholder="(00) 00000-0000" id="telefoneCliente" value="<?=isset($dadosCliente->telefone) ? $dadosCliente->telefone : "";?>">
 					</div>
 				</div>
 				
 				<div class="form-group form-group-100" style="padding-right:5px;">
-					<label class="text-label">Senha Antiga:</label>
+					<label class="text-label">Nova Senha:</label>
 					<input class="input-checkout" placeholder="************" type="password" id="senha">
 				</div>
 					
@@ -518,6 +659,12 @@
 			$("[editarcliente]").on("click", function(){
 
 				$("#editarClienteModal").modal({backdrop: 'static'},'show');
+
+			});
+
+			$("[editarEnderecoEntrega]").on("click", function(){
+
+				$("#editarEnderecoEntrega").modal({backdrop: 'static'},'show');
 
 			});
 
@@ -750,7 +897,7 @@
 
 				$.ajax({
 					method: "POST",
-					url: '<?=base_url()?>index.php/checkout/finalizarPedido',
+					url: '<?=base_url()?>index.php/Checkout/finalizarPedido',
 					beforeSend: function(){
 						loading("Concluindo pedido");
 					},
@@ -807,6 +954,12 @@
 
 
 			self.ValidarPedido = function(){
+				
+				if($(".frete-selecionado").length === 0){
+						alert("Selecione uma opção de frete!");
+						$(".frete-selecionado").focus();
+						return false;
+				}
 				return true;
 			}
 
@@ -958,7 +1111,8 @@
 					nomeCliente: $("#nomeCliente").val(),
 					cpfCliente: $("#cpfCliente").val(),
 					telefoneCliente: $("#telefoneCliente").val(),
-					emailCliente: $("#emailCliente").val(),					
+					emailCliente: $("#emailCliente").val(),
+					senhaCliente: $("#senha").val()
 					//dados endereço
 					//cep: $("#cepCliente").val(),
 					//logradouro: $("#enderecoCliente").val(),

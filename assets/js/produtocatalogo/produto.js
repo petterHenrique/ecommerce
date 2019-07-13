@@ -15,7 +15,7 @@ $(document).ready(function(){
 
 $(document).on("click",".btn-adicionar", function(){
 
-	$(this).html('<i class="fas fa-spin fa-spinner"></i>');
+	$(this).html('<i class="fa fa-spin fa-spinner"></i>');
 	let sku = $(this).data('sku');
 	let nome = $(this).data('nome-produto');
 	let img = $(this).data('img');
@@ -123,12 +123,7 @@ function Produto(){
 			},
 			success: function(data){
 				if(data.sucesso){
-					Swal.fire(
-					  'Sucesso!',
-					  data.mensagem,
-					  'success'
-					)
-
+					self.Modal();
 					//atualiza o total carrinho
 					self.AtualizaTotalCarrinho();
 				}
@@ -144,7 +139,7 @@ function Produto(){
 	self.AtualizaTotalCarrinho = function(){
 		$.post(site_url +"index.php/carrinho/totalItens", {}, function(response){
 			if(response.sucesso){
-				$("#total-carrinho").text(response.total);
+				$("span.qty").text(response.total);
 			}
 		});
 
@@ -164,5 +159,19 @@ function Produto(){
 
 	self.AplicarMask = function(){
 		 $("#contato-leed").mask("(99) 99999-9999");
+	}
+
+
+	/*modal*/
+	self.Modal = function(){
+
+		$("#adicionarCarrrinhoModal").modal('show');
+		$("#adicionarCarrrinhoModal").addClass('fadeIn animated');
+
+
+
+
+
+
 	}
 }

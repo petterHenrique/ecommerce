@@ -2,197 +2,55 @@
 <html lang="pt-br">
 	<head>
 		<meta charset="utf-8">
-		<title>Cac Serra - Artigos Caça e Tiro Esportivo, Airsoft, Carabina de Pressão</title>
-		<link href="<?=base_url()?>assets/css/bootstrap4.min.css" rel="stylesheet">
-		<link href="<?=base_url()?>assets/css/heroic-features.css" rel="stylesheet">
+		<title>Categoria</title>
+		<link href="<?=base_url()?>assets/csstema/bootstrap.min.css" rel="stylesheet">
+		<link href="<?=base_url()?>assets/csstema/nouislider.min.css" rel="stylesheet">
+		<link href="<?=base_url()?>assets/csstema/slick-theme.css" rel="stylesheet">
+		<link href="<?=base_url()?>assets/csstema/slick.css" rel="stylesheet">
+		<link href="<?=base_url()?>assets/csstema/style.css" rel="stylesheet">
 		<link href="<?=base_url()?>assets/css/animate.css" rel="stylesheet">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
+		<link href="<?=base_url()?>assets/csstema/font-awesome.min.css" rel="stylesheet">
 		<!--SEO-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+		
 		<style type="text/css">
-		.text-subfooter{
-			color: #808080;
-    		font-family: 'PT Sans Narrow',sans-serif;
-    		font-size: 13px;
-		}
-		.menu-institucional-footer{
-			list-style: none;
-		}
-		.menu-institucional-footer li a{
-			text-decoration: none;
-		}
-
-		.sub-header{
-			position:absolute;
-			height:30px;
-			width:100%;
-			margin-top:-56px;
-			background:#f5f5f5;
-		}
-		.sub-header p{
-			margin-left:50px;
-			font-size:14px;
-			margin-top:5px;
-		}
-
-		#btn-pesquisar{
-			background:#bf0311;
-			border:1px solid #bf0311;
-			color:#ffffff;
+		.pointer{
 			cursor:pointer;
 		}
-		.painel-header{
-			padding-top:20px;
-			padding-bottom:20px;
-			margin-top:-25px;
-			width:100%;
-			background:#222222;
+		.produto-cor{
+			color:#3376b8;
+			font-family: 'Open Sans',sans-serif;
 		}
-		.panel-pesquisa{
-			margin-top:10px;			
+		.price-success{
+			color: #2FD565;
 		}
-		.panel-cart{
-			margin-top:16px;
-			color:#ffffff;	
+		.price-default{
+			font-size: 70%;
+			color: black;
 		}
-
-		/*migalhas*/
-		.categoria-migalhas{
-			margin-top:-23px;
-			margin-left:15px;
-			font-size:16px;
-			color:#000000;
-			font-weight:bold;
+		/*posiciona modal add carrinho meio tela*/
+		.modal {
+		  text-align: center;
 		}
 
-		/*reset css*/
-		h1,h2,h3,h4,h5{
-			margin: 0;
-		    padding: 0;
-		    border: 0;
-		    font-size: 100%;
-		    font: inherit;
-		    vertical-align: baseline;
+		@media screen and (min-width: 768px) { 
+		  .modal:before {
+		    display: inline-block;
+		    vertical-align: middle;
+		    content: " ";
+		    height: 100%;
+		  }
 		}
 
-
-		/*CSS produto*/
-		.referencia{
-			font-size: .8em;
-		    font-family: Open Sans;
-		    color: #909090;
-		    margin-bottom: 5px;
-		    width: 100%;
-		    text-align: center;
-		}
-		.titulo-produto{
-			font-size:20px;
-		}
-
-		.panel-miniaturas{
-			padding-top:10px;
-			padding-bottom:10px;
-			margin:0 auto;
-		}
-		.img-principal-produto{
-			width:620px;
-			height:440px;
-		}
-		.img-miniaturas{
-			width:65px;
-			cursor:pointer;
-		}
-
-		.text-preco{
-			font-size:22px;
-			color:#2FD565;
-		}
-
-		.btn-adicionar{
-			background:#2FD565;
-			color:#ffffff;
-		}
-
-		.panel-adicionar{
-			margin-top:14px;
-		}
-		.panel-descricao-produto{
-			margin-top:14px;
-		}
-		.panel-orcamento{
-			margin-top:14px;
-		}
-
-		/*orçamento*/
-		.form-orcamento{
-			padding:20px;
-			background:#222222;
-		}
-		.input-orcamento{
-			border-radius:0px;
-			border:2px solid #ffffff;
-			background:#222222;
-			color: #fff;
-		}
-		.input-orcamento:focus{
-			background:#222222;
-			outline: none!important;
-		}
-		.input-orcamento::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-		  	color: #ffffff;
-		}
-		.input-orcamento::-moz-placeholder { /* Firefox 19+ */
-		  	color: #ffffff;
-		}
-		.input-orcamento:-ms-input-placeholder { /* IE 10+ */
-		  	color: #ffffff;
-		}
-		.input-orcamento:-moz-placeholder { /* Firefox 18- */
-		  	color: #ffffff;
-		}
-
-		.input-orcamento-select {
-			border-radius:0px;
-			border:2px solid #ffffff;
-			background:#222222;
-			color: #ffffff;
-		}
-		.input-orcamento-select option {
-		    border-radius:0px;
-			border:2px solid #ffffff;
-			background:#222222;
-			color: #ffffff;
-		}
-		.zoom {
-			display:inline-block;
-			position: relative;
-		}
-		/* magnifying glass icon */
-		.zoom:after {
-			content:'';
-			display:block; 
-			width:33px; 
-			height:33px; 
-			position:absolute; 
-			top:0;
-			right:0;
-			background:url(icon.png);
-		}
-		.zoom img {
-			display: block;
-		}
-		.zoom img::selection { background-color: transparent; }
-
-		.avaliacoes i{
-			color:#f2ca27;
+		.modal-dialog {
+		  display: inline-block;
+		  text-align: left;
+		  vertical-align: middle;
 		}
 		</style>
-		 <script> 
-	        var site_url = "<?=base_url()?>",
-	            segments = ('').split('/');
-	    </script>
+		<script>
+			var site_url = '<?=base_url()?>';
+		</script>
 	</head>
 	<body>
 		<?php $this->load->view('/inc/header');?>

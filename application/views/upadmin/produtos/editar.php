@@ -73,7 +73,6 @@
                             <div class="form-group col-md-12">
                                 <label>Descrição:</label>
                                 <div id="descricao-produto" style="height: 300px"> 
-                                   <?=$produto['DES_PRODUTO']?>
                                 </div>
                             </div>
                             <hr />
@@ -304,6 +303,9 @@
             }
         });
 
+
+        editorTexto.setContents(<?=$produto["DES_PRODUTO"]?>);
+
         const produto = new Produto();
 
         Dropzone.autoDiscover = false;
@@ -483,7 +485,7 @@
                     descricaoProduto: JSON.stringify(editorTexto.getContents()),
                     modelProduto: $("#modelo-produto").val(),
                     marcaProduto: $("#marca-produto").val(),
-
+                    categorias: $("#categorias-produto").val(),
                     //precificacao do produto
                     precoProduto: $("#preco-produto").val(),
                     promoProduto: $("#promo-produto").val(),

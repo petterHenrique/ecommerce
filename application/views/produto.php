@@ -13,7 +13,7 @@ $fotosProduto = $produto['fotos'];
 		<link href="<?=base_url()?>assets/csstema/slick-theme.css" rel="stylesheet">
 		<link href="<?=base_url()?>assets/csstema/slick.css" rel="stylesheet">
 		<link href="<?=base_url()?>assets/csstema/style.css" rel="stylesheet">
-		
+		<link href="<?=base_url()?>assets/css/animate.css" rel="stylesheet">
 		<link href="<?=base_url()?>assets/csstema/font-awesome.min.css" rel="stylesheet">
 		<!--SEO-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,6 +21,36 @@ $fotosProduto = $produto['fotos'];
 		<style type="text/css">
 		.pointer{
 			cursor:pointer;
+		}
+		.produto-cor{
+			color:#3376b8;
+			font-family: 'Open Sans',sans-serif;
+		}
+		.price-success{
+			color: #2FD565;
+		}
+		.price-default{
+			font-size: 70%;
+			color: black;
+		}
+		/*posiciona modal add carrinho meio tela*/
+		.modal {
+		  text-align: center;
+		}
+
+		@media screen and (min-width: 768px) { 
+		  .modal:before {
+		    display: inline-block;
+		    vertical-align: middle;
+		    content: " ";
+		    height: 100%;
+		  }
+		}
+
+		.modal-dialog {
+		  display: inline-block;
+		  text-align: left;
+		  vertical-align: middle;
 		}
 		</style>
 		<script>
@@ -79,12 +109,29 @@ $fotosProduto = $produto['fotos'];
 						</div>
 						<div class="col-md-6">
 							<div class="product-body">
-								<div class="product-label">
+
+								<?php 
+
+								$promocaoExistente = date("d-m-Y", strtotime($produtoCompleto['DTA_FINAL_PROMO'])) >= date("d/m/Y") ? true : false;
+
+								?>
+
+								<!--div class="product-label">
 									<span>New</span>
 									<span class="sale">-20%</span>
-								</div>
-								<h2 class="product-name"><?=$produtoCompleto['NOME_PRODUTO']?></h2>
-								<h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3>
+								</div-->
+								<h2 class="product-name produto-cor"><?=$produtoCompleto['NOME_PRODUTO']?></h2>
+
+								<?php 
+									if($promocaoExistente){
+								?>
+
+								<h3 class="product-price price-success">R$ <?=number_format((float)$produtoCompleto['PRECO_PROMO_PRODUTO'], 2, ',', '');?>&nbsp;<del class="price-default">R$ <?=number_format((float)$produtoCompleto['PRECO_PRODUTO'], 2, ',', '');?></del></h3>
+
+								<?php
+									}
+								?>
+								
 								<div>
 									<div class="product-rating">
 										<i class="fa fa-star"></i>
@@ -93,13 +140,14 @@ $fotosProduto = $produto['fotos'];
 										<i class="fa fa-star"></i>
 										<i class="fa fa-star-o empty"></i>
 									</div>
-									<a href="#">3 Review(s) / Add Review</a>
+									<a href="#">3 Avaliações(s) / Avaliar</a>
 								</div>
-								<p><strong>Availability:</strong> In Stock</p>
-								<p><strong>Brand:</strong> E-SHOP</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-									dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-								<div class="product-options">
+								<p><strong>Código:</strong> <?=$produtoCompleto['EAN_PRODUTO']?></p>
+								<p><strong>Disponibilidade:</strong> Em estoque</p>
+								<p><strong>Marca:</strong> E-SHOP</p>
+								<p><strong>Quantidade:</strong> 2</p>
+								
+								<!--div class="product-options">
 									<ul class="size-option">
 										<li><span class="text-uppercase">Size:</span></li>
 										<li class="active"><a href="#">S</a></li>
@@ -113,7 +161,7 @@ $fotosProduto = $produto['fotos'];
 										<li><a href="#" style="background-color:#BF6989;"></a></li>
 										<li><a href="#" style="background-color:#9A54D8;"></a></li>
 									</ul>
-								</div>
+								</div-->
 
 								<div class="product-btns">
 									<div class="qty-input hidden">
@@ -124,15 +172,15 @@ $fotosProduto = $produto['fotos'];
 										data-sku="<?=$produtoCompleto['EAN_PRODUTO']?>"
 										data-nome-produto="<?=$produtoCompleto['NOME_PRODUTO']?>"
 										data-img="<?=$produtoCompleto['FOTO_CAPA']?>"
-										 class="primary-btn btn-success btn-adicionar"><i class="fa fa-shopping-cart"></i> Adicionar Carrinho</button>
+										 class="primary-btn add-cart btn-adicionar"><i class="fa fa-shopping-cart"></i> COMPRAR</button>
 
 
 
-									<div class="pull-right">
+									<!--div class="pull-right">
 										<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
 										<button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
 										<button class="main-btn icon-btn"><i class="fa fa-share-alt"></i></button>
-									</div>
+									</div-->
 								</div>
 							</div>
 						</div>
@@ -140,15 +188,15 @@ $fotosProduto = $produto['fotos'];
 							<div class="product-tab">
 								<ul class="tab-nav">
 									<li class="active"><a data-toggle="tab" href="#tab1">Description</a></li>
-									<li><a data-toggle="tab" href="#tab1">Details</a></li>
-									<li><a data-toggle="tab" href="#tab2">Reviews (3)</a></li>
+									<li><a data-toggle="tab" href="#avaliacoes">Avaliações (3)</a></li>
 								</ul>
 								<div class="tab-content">
 									<div id="tab1" class="tab-pane fade in active">
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-											irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+										<div id="descricao-produto"> 
+										</div>
+										
 									</div>
-									<div id="tab2" class="tab-pane fade in">
+									<div id="avaliacoes" class="tab-pane fade in">
 
 										<div class="row">
 											<div class="col-md-6">
@@ -261,6 +309,34 @@ $fotosProduto = $produto['fotos'];
 		</div>
 	<!-- /section -->
 
+		<div id="adicionarCarrrinhoModal" class="modal fadeIn animated" role="dialog">
+		  <div class="modal-dialog">
+		    <!-- Modal content-->
+		    <div class="modal-content">
+		      <div class="modal-header" style="border-bottom: none;">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		      </div>
+		      <div class="modal-body">
+		        <div style="text-align:center;">
+		        	<i style="color:#3376b8;" class="fa fa-4x fa-check-circle" aria-hidden="true"></i>
+		        	<p style="font-size:20px;color:#3376b8;
+				font-family: 'Open Sans',sans-serif;">SUCESSO</p>
+			        <p style="font-size:20px;color:#3376b8;
+				font-family: 'Open Sans',sans-serif;">Produto adicionado ao carrinho com sucesso!</p>
+
+					<div style="padding-top:10px;">
+						<button style="background:#3376b8;color:#fff;" class="btn btn-default" data-dismiss="modal">CONTINUAR COMPRANDO</button>
+						<button onclick="window.location.href='<?=base_url()?>index.php/carrinho'" class="btn add-cart" data-dismiss="modal">IR PARA O CARRINHO</button>
+					</div>
+		        </div>
+		      </div>
+		      <div class="modal-footer" style="border-top: none;">
+		      </div>
+		    </div>
+
+		  </div>
+		</div>
+
    
         <?php $this->load->view('/inc/footer');?>
         <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
@@ -274,11 +350,11 @@ $fotosProduto = $produto['fotos'];
         //funções manipulaão produto
         $(function(){
 
-        	//var editorTexto = new Quill('.panel-descricao-produto');
-        	//editorTexto.setContents(<?=$produtoCompleto['DES_PRODUTO'];?>);
+        	var editorTexto = new Quill('#descricao-produto');
+        	editorTexto.setContents(<?=$produtoCompleto["DES_PRODUTO"]?>);
         	
         	$("div.category-nav").addClass("show-on-click");
-
+        	
         });
         </script>
 	</body>

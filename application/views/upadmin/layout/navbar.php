@@ -72,11 +72,11 @@
             <div class="col-lg order-lg-first">
                 <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
                     <li class="nav-item">
-                        <a href="<?=base_url()?>index.php/Dashboard/index" class="nav-link active"><i class="fe fe-home"></i> Home</a>
+                        <a href="<?=base_url()?>index.php/Dashboard/index" class="nav-link active"><i class="fa fa-home"></i> Home</a>
                     </li>
                     <li class="nav-item">
                         <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown">
-                            <i class="fe fe-box"></i> Catálogo
+                            <i class="fa fa-archive"></i> Catálogo
                         </a>
                         <div class="dropdown-menu dropdown-menu-arrow">
                             <a href="<?=base_url()?>index.php/categoriasAdmin/index" class="dropdown-item">Categorias</a>
@@ -88,17 +88,17 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a href="<?=base_url()?>index.php/pedidosAdmin/index" class="nav-link">
-                            <i class="fe fe-shopping-cart"></i> Pedidos
+                            <i class="fa fa-shopping-cart"></i> Pedidos
                         </a>
                     </li>
                     <li class="nav-item dropdown">
                         <a href="<?=base_url()?>index.php/clientesAdmin/index" class="nav-link">
-                            <i class="fe fe-users"></i> Clientes
+                            <i class="fa fa-users"></i> Clientes
                         </a>
                     </li>
                     <li class="nav-item dropdown">
                         <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown">
-                            <i class="fe fe-zap"></i> Marketplace
+                            <i class="fa fa-plug"></i> Marketplace
                         </a>
                         <div class="dropdown-menu dropdown-menu-arrow">
                         	<a href="<?=base_url()?>index.php/bannersAdmin/index" class="dropdown-item">Mercado Livre</a>
@@ -110,7 +110,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link" data-toggle="dropdown">
-                            <i class="fe fe-bar-chart-2"></i> Relatórios
+                            <i class="fa fa-pie-chart"></i> Relatórios
                         </a>
                     </li>
                     <li class="nav-item dropdown">
@@ -125,12 +125,12 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a href="<?=base_url()?>index.php/paginasadmin/index" class="nav-link">
-                            <i class="fe fe-file"></i> Páginas
+                            <i class="fa fa-file-text-o"></i> Páginas
                         </a>
                     </li>
                     <li class="nav-item dropdown">
                         <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown">
-                            <i class="fe fe-settings"></i> Configurações
+                            <i class="fa fa-cog"></i> Configurações
                         </a>
                         <div class="dropdown-menu dropdown-menu-arrow">
                             <a href="<?=base_url()?>index.php/dadosEmpresaAdmin/index" class="dropdown-item">Dados Empresa</a>

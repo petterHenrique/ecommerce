@@ -79,7 +79,7 @@ a {
 }
 
 a:hover, a:focus {
-  color: #F8694A;
+  color: #005598;
   text-decoration: none;
   outline: none;
 }
@@ -153,9 +153,14 @@ hr {
   background-color: #F8694A;
 }
 
+.primary-btn2{
+	color: #fff;
+	background-color: #005598;
+}
+
 .primary-btn:hover, .primary-btn:focus {
   color: #FFF;
-  background-color: #30323A;
+  outline:none;
 }
 
 /*----------------------------*\
@@ -232,7 +237,7 @@ textarea.input {
 }
 
 .list-links li>a:hover, .list-links li>a:focus, .list-links li.active>a {
-  color: #F8694A;
+  color: #005598;
   -webkit-transform: translateX(10px);
   -ms-transform: translateX(10px);
   transform: translateX(10px);
@@ -296,7 +301,7 @@ textarea.input {
 }
 
 .breadcrumb>.active {
-  color: #F8694A;
+  color: #005598;
 }
 
 .breadcrumb>li+li:before {
@@ -814,7 +819,7 @@ textarea.input {
 ===========================================================*/
 
 #home .home-wrap {
-  margin-left: 270px;
+  /*margin-left: 270px;*/
 }
 
 #home-slick .banner {
@@ -1004,6 +1009,17 @@ textarea.input {
   visibility: visible;
 }
 
+.add-cart{
+	background:#2FD565;
+	color:#fff;
+	border-radius:4px;
+}
+.add-cart:hover{
+	background:#2FD565;
+	color:#fff;
+	border:1px solid #2FD565;
+}
+
 /*----------------------------*\
 	 Widget product
 \*----------------------------*/
@@ -1043,6 +1059,7 @@ textarea.input {
 
 .product.product-widget .product-name {
   font-size: 14px;
+  font-family: 'Open Sans',sans-serif;
 }
 
 .product.product-widget .cancel-btn {
@@ -1290,8 +1307,8 @@ textarea.input {
 
 #product-view .product-view.slick-slide.slick-current {
   opacity: 1;
-  -webkit-box-shadow: 0px 0px 0px 2px #F8694A inset;
-  box-shadow: 0px 0px 0px 2px #F8694A inset;
+  -webkit-box-shadow: 0px 0px 0px 2px #005598 inset;
+  box-shadow: 0px 0px 0px 2px #005598 inset;
 }
 
 #product-view .product-view {
@@ -1412,7 +1429,7 @@ textarea.input {
 }
 
 .product-tab .tab-nav li.active a {
-  color: #F8694A;
+  color: #005598;
 }
 
 .product-tab .tab-nav li.active a:after {
@@ -1422,7 +1439,7 @@ textarea.input {
   bottom: -1.5px;
   height: 3px;
   width: 30px;
-  background-color: #F8694A;
+  background-color: #005598;
 }
 
 /*-- reviews --*/

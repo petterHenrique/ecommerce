@@ -217,7 +217,7 @@
   		let autenticar = function(email, senha, contexto){
 
   			$.ajax({
-  				url: "<?=base_url()?>index.php/checkout/auth",
+  				url: "<?=base_url()?>index.php/Checkout/auth",
   				method: "POST",
   				data: {email:email, senha: senha},
   				beforeSend: function(){
@@ -230,7 +230,9 @@
   					}
   				},
   				error: function(data){
-  					console.log(data);
+					console.log("teste");
+					console.log(data);
+					alert(data.responseJSON.error);
   				},
   				complete: function(){
   					contexto.empty();
@@ -243,7 +245,7 @@
   		let enviarEmail = function(email){
   			if(validarEmail()){
   				$.ajax({
-  					url: "<?=base_url()?>/index.php/Checkout/VerificarUsuarioCheckout",
+  					url: "<?=base_url()?>index.php/Checkout/VerificarUsuarioCheckout",
   					method: "POST",
   					data: { email:email },
   					beforeSend: function(){

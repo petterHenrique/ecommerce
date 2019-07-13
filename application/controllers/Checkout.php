@@ -83,7 +83,15 @@ class Checkout extends CI_Controller {
 
 		try{
 
+			$cliente = array(
+				'' => '',
+				'' => '',
+				'' => ''
+			);
+
 			$this->load->model("Clientes");
+
+
 
 
 		}catch(Exception $e){

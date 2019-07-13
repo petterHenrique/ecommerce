@@ -217,6 +217,21 @@ class ProdutosAdmin extends MasterLogado {
 			$this->load->model("ProdutosAdminModel");
 
 			$atualizarProduto = $this->ProdutosAdminModel->editar($produto, $modeloProduto->codigoProduto);
+
+			//agora eu atribuo as categoria
+			$this->load->model("CategoriasAdminModel");			
+
+			foreach ($modeloProduto->categorias as $categoria) {
+
+				$categoriaProduto = array(
+					'COD_PRODUTO' =>  $modeloProduto->codigoProduto,
+					'COD_CATEGORIA' => $categoria
+				);
+
+				$this->CategoriasAdminModel->salvarCategoriaProduto($categoriaProduto);
+			}
+
+			
 			//nesse momento ele exclui as imagens de exclusao
 			foreach ($modeloProduto->fotosExclusao as $fotoEx) {
 

@@ -10,6 +10,15 @@ class Categoria extends CI_Controller {
 	{
 	}
 
+	public function teste(){
+
+
+		$this->load->model('ProdutosAdminModel');
+		$d = $this->ProdutosAdminModel->buscarProdutosPorCategoriaUrlAmigavel('utilitarios-domesticos');
+
+		echo var_dump($d);
+	}
+
 	public function produtos(){
 
 		$urlAmigavel = $this->uri->segment(3);//$this->input->get('url');
@@ -24,6 +33,10 @@ class Categoria extends CI_Controller {
 			$this->load->model('ProdutosAdminModel');
 			$this->load->model('DadosEmpresaAdminModel');
 			
+			$dados['carrinhoCabecalho'] = Util::TotalCarrinhoCompras();
+
+		
+
 
 			$dados['categorias'] = $this->categoriasSite();
 			$dados['dadosEmpresa'] = $this->DadosEmpresaAdminModel->buscarDadosEmpresa()[0];

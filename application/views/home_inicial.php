@@ -1,12 +1,5 @@
 	<?php
 		defined('BASEPATH') OR exit('No direct script access allowed');
-		$foto = 'https://w4.ezcdn.com.br/falconarmas/fotos/pequena/21487fp1/kit-pistola-de-airsoft-co2-cybergun-taurus-pt-92-nylon-maleta-5-co2-2000bbs.jpg';
-		$foto2 = 'https://w2.ezcdn.com.br/falconarmas/fotos/pequena/21872fp1/rifle-de-pressao-pcp-falcon-black-hunter-5-5mm-edicao-20-anos.jpg';
-		$foto3 = 'https://w3.ezcdn.com.br/falconarmas/fotos/pequena/21425fp1/kit-rifle-de-airsoft-eletrico-umarex-h-k-416c-ris-pistola-kwc-glock-g17-silicone.jpg';
-		$foto4 = 'https://w1.ezcdn.com.br/falconarmas/fotos/pequena/21570fp1/pistola-de-airsoft-spring-kwc-glock-g17-mamadeira-2000-bbs-maleta.jpg';
-
-		$revolver = 'https://w1.ezcdn.com.br/falconarmasdefogo/fotos/pequena/94221fp1/revolver-rossi-087-pioneer-cal-38-5-tiros-cano-2-cabo-de-madeira-inox.jpg';
-
 		$title = "ded";
 	?>
 <!DOCTYPE html>
@@ -39,7 +32,7 @@
 			<!-- container -->
 			<div class="container">
 				<!-- home wrap -->
-				<div class="home-wrap">
+				<div class="">
 					<!-- home slick -->
 					<div id="home-slick">
 						<!-- banner -->
@@ -94,10 +87,9 @@
 				<!-- banner -->
 				<div class="col-md-4 col-sm-6">
 					<a class="banner banner-1" href="#">
-						<img src="<?=base_url()?>assets/imgtema/banner10.jpg" alt="">
-						<div class="banner-caption text-center">
-							<h2 class="white-color">NEW COLLECTION</h2>
-						</div>
+					
+						<img src="https://viainox.com/images/fotos/banner_4680.jpg?v=6.1.5" alt="">
+				
 					</a>
 				</div>
 				<!-- /banner -->
@@ -105,10 +97,7 @@
 				<!-- banner -->
 				<div class="col-md-4 col-sm-6">
 					<a class="banner banner-1" href="#">
-						<img src="<?=base_url()?>assets/imgtema/banner11.jpg" alt="">
-						<div class="banner-caption text-center">
-							<h2 class="white-color">NEW COLLECTION</h2>
-						</div>
+						<img src="https://viainox.com/images/fotos/banner_4680.jpg?v=6.1.5" alt="">
 					</a>
 				</div>
 				<!-- /banner -->
@@ -116,10 +105,7 @@
 				<!-- banner -->
 				<div class="col-md-4 col-md-offset-0 col-sm-6 col-sm-offset-3">
 					<a class="banner banner-1" href="#">
-						<img src="<?=base_url()?>assets/imgtema/banner12.jpg" alt="">
-						<div class="banner-caption text-center">
-							<h2 class="white-color">NEW COLLECTION</h2>
-						</div>
+						<img src="https://viainox.com/images/fotos/banner_4726.jpg?v=6.1.5" alt="">
 					</a>
 				</div>
 				<!-- /banner -->
@@ -148,19 +134,10 @@
 				</div>
 				<!-- /section-title -->
 
-				<!-- banner -->
-				<div class="col-md-3 col-sm-6 col-xs-6">
-					<div class="banner banner-2">
-						<img src="<?=base_url()?>assets/imgtema/banner14.jpg" alt="">
-						<div class="banner-caption">
-							<h2 class="white-color">NEW<br>COLLECTION</h2>
-							<button class="primary-btn">Shop Now</button>
-						</div>
-					</div>
-				</div>
+				
 
 				<!-- Product Slick -->
-				<div class="col-md-9 col-sm-6 col-xs-6">
+				<div class="col-md-12 col-sm-6 col-xs-6">
 					<div class="row">
 						<div id="product-slick-1" class="product-slick">
 							<?php 

@@ -65,7 +65,7 @@
 						<li class="header-account dropdown default-dropdown">
 							
 							<?php 
-							echo var_dump($_SESSION);
+							//echo var_dump($_SESSION);
 							?>
 
 							<div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
@@ -147,248 +147,40 @@
 	<div id="navigation">
 		<!-- container -->
 		<div class="container">
-			<div id="responsive-nav">
-				<!-- category nav -->
-				<div class="category-nav">
-					<span class="category-header">Categories <i class="fa fa-list"></i></span>
-					<ul class="category-list">
-
-						<?php
-							foreach ($categorias as $categoria) {
-
-							//echo json_encode($categoria); 
-						?>
-						<?php 
-							if(!empty($categoria['FILHAS'])){
-						?>
-
-						<li class="dropdown side-dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><?=$categoria['NOME_CATEGORIA']?> <i class="fa fa-angle-right"></i></a>
-							<div class="custom-menu">
-								<div class="row">
-									<div class="col-md-12">
-										<ul class="list-links">
-											<?php 
-											foreach ($categoria['FILHAS'] as $filha) {
-											?>
-												<li><a href="#"><?=$filha['NOME_CATEGORIA']?></a></li>
-											<?php 
-											}
-											?>
-										</ul>
-										
-									</div>
-									<!--div class="col-md-4">
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-										<hr class="hidden-md hidden-lg">
-									</div>
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-									</div-->
-								</div>
-								<div class="row hidden-sm hidden-xs">
-									<div class="col-md-12">
-										<hr>
-										<a class="banner banner-1" href="#">
-											<img src="./img/banner05.jpg" alt="">
-											<div class="banner-caption text-center">
-												<h2 class="white-color">NEW COLLECTION</h2>
-												<h3 class="white-color font-weak">HOT DEAL</h3>
-											</div>
-										</a>
-									</div>
-								</div>
-							</div>
-						</li>
-
-						<?php
-							}else{
-						?>
-							<li><a href="#"><?=$categoria['NOME_CATEGORIA']?></a></li>
-						<?php
-							}
-						?>
-						
-						<?php 
-							}
-						?>
-
-						
-						
-					</ul>
-				</div>
-				<!-- /category nav -->
-
+			<div id="responsive-nav" class="">
 				<!-- menu nav -->
 				<div class="menu-nav">
 					<span class="menu-header">Menu <i class="fa fa-bars"></i></span>
 					<ul class="menu-list">
-						<li><a href="#">Home</a></li>
-						<li><a href="#">Shop</a></li>
-						<li class="dropdown mega-dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Women <i class="fa fa-caret-down"></i></a>
+						<?php
+							foreach ($categorias as $categoria) {
+							//echo json_encode($categoria);
+							if(!empty($categoria['FILHAS'])){
+						?>
+						<li class="dropdown mega-dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><?=$categoria['NOME_CATEGORIA']?> <i class="fa fa-caret-down"></i></a>
 							<div class="custom-menu">
 								<div class="row">
 									<div class="col-md-4">
 										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
+										<?php 
+										foreach ($categoria['FILHAS'] as $filha) {
+										?>
+										<li><a href="#"><?=$filha['NOME_CATEGORIA'];?></a></li>
+										<?php 
+											}
+										?>
 										</ul>
-										<hr class="hidden-md hidden-lg">
-									</div>
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-										<hr class="hidden-md hidden-lg">
-									</div>
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="row hidden-sm hidden-xs">
-									<div class="col-md-12">
-										<hr>
-										<a class="banner banner-1" href="#">
-											<img src="./img/banner05.jpg" alt="">
-											<div class="banner-caption text-center">
-												<h2 class="white-color">NEW COLLECTION</h2>
-												<h3 class="white-color font-weak">HOT DEAL</h3>
-											</div>
-										</a>
+										
 									</div>
 								</div>
 							</div>
 						</li>
-						<li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Men <i class="fa fa-caret-down"></i></a>
-							<div class="custom-menu">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="hidden-sm hidden-xs">
-											<a class="banner banner-1" href="#">
-												<img src="./img/banner06.jpg" alt="">
-												<div class="banner-caption text-center">
-													<h3 class="white-color text-uppercase">Women’s</h3>
-												</div>
-											</a>
-											<hr>
-										</div>
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-									</div>
-									<div class="col-md-3">
-										<div class="hidden-sm hidden-xs">
-											<a class="banner banner-1" href="#">
-												<img src="./img/banner07.jpg" alt="">
-												<div class="banner-caption text-center">
-													<h3 class="white-color text-uppercase">Men’s</h3>
-												</div>
-											</a>
-										</div>
-										<hr>
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-									</div>
-									<div class="col-md-3">
-										<div class="hidden-sm hidden-xs">
-											<a class="banner banner-1" href="#">
-												<img src="./img/banner08.jpg" alt="">
-												<div class="banner-caption text-center">
-													<h3 class="white-color text-uppercase">Accessories</h3>
-												</div>
-											</a>
-										</div>
-										<hr>
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-									</div>
-									<div class="col-md-3">
-										<div class="hidden-sm hidden-xs">
-											<a class="banner banner-1" href="#">
-												<img src="./img/banner09.jpg" alt="">
-												<div class="banner-caption text-center">
-													<h3 class="white-color text-uppercase">Bags</h3>
-												</div>
-											</a>
-										</div>
-										<hr>
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</li>
-						<li><a href="#">Sales</a></li>
-						<li class="dropdown default-dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Pages <i class="fa fa-caret-down"></i></a>
-							<ul class="custom-menu">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="products.html">Products</a></li>
-								<li><a href="product-page.html">Product Details</a></li>
-								<li><a href="checkout.html">Checkout</a></li>
-							</ul>
-						</li>
+						<?php } else { ?>
+							<li><a href="<?=base_url()?>index.php/categoria/produtos/<?=$categoria['URL_AMIGAVEL_CATEGORIA']?>"><?=$categoria['NOME_CATEGORIA']?></a></li>
+						<?php
+							}
+						}
+						?>
 					</ul>
 				</div>
 				<!-- menu nav -->
@@ -396,119 +188,3 @@
 		</div>
 		<!-- /container -->
 	</div>
-	<!-- /NAVIGATION -->
-<?php 
-/*
-
-		<!--div class="sub-header"> 
-			<p><i class="fas fa-phone"></i> <?=$dadosEmpresa['DES_TELEFONE'];?> &nbsp;&nbsp; <i class="fab fa-whatsapp"></i> <?=$dadosEmpresa['DES_WHATSAPP'];?></p>
-		</div>
-
-		<header class="painel-header"> 
-			<!--seção de pesquisa-->
-			<!--div class="container "> 
-				<div class="row"> 
-					<div class="col-3"> 
-						<div class="panel-logo"> 
-							<h2 style="visibility:hidden;font-size:0px;">CacSerra - Serviços de Caça</h2>
-							<a href="<?=base_url()?>"><img class="mx-auto d-block" src="<?=base_url()?>/assets/images/logo-header.fw.png"/></a>
-						</div>
-					</div>
-					<div class="col-6"> 
-					    <div class="panel-pesquisa"> 
-					    	
-			
-					    	<?php 
-								if(!empty($_SESSION['clienteLogado'])){
-								$cliente = $_SESSION['clienteLogado'];
-							?>
-							<p style="font-size:14px; position:absolute; margin-top:-25px;color:#fff;">
-					    		Olá, <?=$cliente['nome']?>
-					    	</p>
-							<?php		
-								}else{ 
-							?>
-							<p style="margin-top:20px;color:#fff;">
-						    	Cadastre-se ou faça login
-						    </p>
-							<?php	
-								}
-							?>
-					    	<div class="input-group">
-							    <input type="text" class="form-control" placeholder="Pesquise em todo o site" aria-label="Input group example" aria-describedby="btnGroupAddon">
-							    <div class="input-group-prepend">
-								    <div class="input-group-text" id="btn-pesquisar"> 
-								      	 <i class="fas fa-search"></i>
-								    </div>
-							    </div>
-							</div>
-					    </div>
-					</div>
-					<div class="col-3"> 
-						<div class="panel-cart text-center"> 
-
-							<?php 
-								//aqui eu gerencio o perfil do usuário
-								if(!empty($cliente)){ 
-							?>
-								<span data-toggle="dropdown" class="usuario"><i class="fas fa-user"></i> &nbsp;</span>
-								&nbsp;&nbsp;&nbsp;&nbsp;
-
-
-								<div class="dropdown-menu">
-							      <a class="dropdown-item" href="#">Meus Pedidos</a>
-							      <a class="dropdown-item" href="#">Meu Perfil</a>
-							    </div>
-
-							<?php
-								}else{?>
-
-								<span data-toggle="dropdown" class="usuario"><i class="fas fa-user"></i> &nbsp;</span>
-								&nbsp;&nbsp;&nbsp;&nbsp;
-
-							<?php
-								}
-							?>
-
-							<span class="carrinho" style="cursor:pointer;" onclick="window.location.href='<?=base_url()?>index.php/carrinho/'"><i class="fas fa-lg fa-shopping-cart"></i> &nbsp; <span id="total-carrinho" class="badge badge-success">0</span></span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
-
-		
-		<!-- aqui é o menu -->
-		<!--nav class="navbar navbar-expand-lg navbar-light bg-light"> 
-			<ul class="navbar-nav mr-auto">
-			<?php
-				foreach ($categorias as $categoria) { 
-			?>
-			<?php //if(empty($categoria['FILHAS'])) {?>
-				<li class="nav-item">
-		            <a class="nav-link" href="<?=base_url()?>index.php/categoria/produtos/<?=$categoria['URL_AMIGAVEL_CATEGORIA']?>"><h2 class="title-categoria"><?=$categoria['NOME_CATEGORIA']?></h2></a>
-		        </li>
-			<?php } else { ?>
-				<li class="nav-item dropdown">
-	            	<a class="nav-link dropdown-toggle" href="<?=base_url()?>index.php/categoria/produtos/$categoria['URL_AMIGAVEL_CATEGORIA']?>" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?=$categoria['NOME_CATEGORIA']?> 
-	            	</a>
-		            <div class="dropdown-menu" aria-labelledby="dropdown03">
-		            	<?php 
-							foreach ($categoria['FILHAS'] as $categoriaFilha) { 
-						?>
-		              		<a class="dropdown-item" href="<?=base_url()?>index.php/categoria/produtos/<?=$categoriaFilha['URL_AMIGAVEL_CATEGORIA']?>"><?=$categoriaFilha['NOME_CATEGORIA'];?></a>
-		              	<?php	
-							}
-						?>
-		            </div>
-	          	</li>
-			<?php } ?>
-			<?php	
-				}
-			?>
-	        </ul>
-		</nav>
-
-*/
-
-?>
